@@ -1,16 +1,51 @@
 [helpers]
 
 [default.variables]
+email = "jeremy.damour2@gmail.com"
+install_pkgs = true
+cargo_pkgs = []
+arch_pkgs = [
+    "git",
+    "wget",
+    "neovim",
+    "bash-language-server",
+    "git-delta",
+    "bat",
+    "trash-cli",
+    "bottom",
+    "dua-cli",
+    "fd",
+    "ripgrep",
+    "lsd",
+    "mcfly",
+    "evince",
+    "eva"
+]
 
 [shell.variables]
 editor = "nvim"
 
+#zsh
+[zsh]
+depends = ["shell"]
+
+[zsh.variables]
+config_dir = "~/.config/zsh"
+
+[zsh.files]
+"zsh/zshrc" = "~/.zshrc"
+"zsh/config" = "~/.config/zsh"
+
+#neovim
 [neovim.files]
 nvim = "~/.config/nvim"
+
+#git
+[git]
+depends = ["shell", "default"]
 
 [git.files]
 gitconfig = "~/.gitconfig"
 
 [git.variables]
-email = "jeremy.damour2@gmail.com"
 name = "jeremy.damour"

@@ -1,25 +1,11 @@
-#!/bin/sh -xe
-install_arch () {
-    echo "===== $1 ====="
-    pamac install "$1"
-}
+#!/bin/sh
+set -xe
 
-install_aur () {
-    echo "===== $1 ====="
-    paru -S "$1"
-}
+{{#if install_pkgs}}
+pamac install {{#each arch_pkgs }} "{{this}}" {{/each}}
 
-install_cargo () {
-    echo "===== $1 ====="
-    cargo install $1
-}
+{{#each cargo_pkgs }}
+cargo install {{this}}
+{{/each }}
 
-install_arch rust
-
-install_arch git
-
-install_arch neovim
-
-# rust efficent package
-install_arch git-delta
-install_cargo bat
+{{/if}}

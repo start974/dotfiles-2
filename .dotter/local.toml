@@ -1,7 +1,8 @@
 includes = []
 packages = [
     "neovim",
-    "git"
+    "git",
+    "zsh"
 ]
 
 #[files]

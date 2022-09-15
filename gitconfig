@@ -9,14 +9,13 @@
     verbose = true
 
 [core]
-{{#if (is_executable "delta")}}
+    editor = {{editor}}
     pager = delta
 
 [delta]
     side-by-side = false
     line-numbers = true
     navigate = true
-{{/if}}
 
 [init]
     defaultBranch = main
