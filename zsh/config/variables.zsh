@@ -1,8 +1,9 @@
 addPath (){
-    export PATH="$PATH:$1"
+    export PATH="$PATH:$(realpath $1)"
 }
 # to append path
-addPath ".cargo/bin/"
+addPath "$HOME/.cargo/bin/"
+addPath "{{script_dir}}"
 
 # fix editor
 export EDITOR={{editor}}

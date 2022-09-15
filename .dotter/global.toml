@@ -3,6 +3,7 @@
 [default.variables]
 email = "jeremy.damour2@gmail.com"
 install_pkgs = true
+font = "FiraCode"
 cargo_pkgs = [
     "lsd",
 ]
@@ -17,16 +18,63 @@ arch_pkgs = [
     "git",
     "git-delta",
     "lua",
+    "lua-language-server",
     "mcfly",
     "neovim",
     "ripgrep",
     "trash-cli",
+    "ttf-fira-code",
     "wget",
     "zsh-completions"
 ]
+[colors.variables]
+# Black / grey
+color0 = "000000"
+color8 = "3f3f3f"
+
+# Red
+color1 = "f15252"
+color9 = "F50606"
+
+# Green=
+color2 = "5ddc7b"
+color10= "09B540"
+
+# Yellow
+color3 = "e6e871"
+color11= "f1ef06"
+
+# Blue
+color4 = "157ef1"
+color12= "0a54a4"
+
+# Magenta
+color5 = "9c37da"
+color13= "640c9b"
+
+# Cyan
+color6 = "0fceba"
+color14= "068973"
+
+# white
+color7 = "e8e8e8"
+color15= "ffffff"
+
+# cursor
+cursor = "7a5Eae"
+cursor_text_color = "e0bef3"
+
 
 [shell.variables]
 editor = "nvim"
+
+# foot (terminal)
+[foot]
+depends = ["colors"]
+
+[foot.files]
+foot = "~/.config/foot/foot.ini"
+
 #git
 [git]
 depends = ["shell", "default"]
@@ -37,25 +85,27 @@ gitconfig = "~/.gitconfig"
 [git.variables]
 name = "jeremy.damour"
 
-#neovim
+#neovim (editor)
 [neovim.files]
 nvim = "~/.config/nvim"
 
 #sway
-#[sway.files]
-#"sway/config.d" = "~/.config/sway/config.d"
-#"sway/definition.d" = "~/.config/sway/definitions.d"
+[sway.files]
+"sway/config.d" = "~/.config/sway/config.d"
+"sway/definition.d" = "~/.config/sway/definitions.d"
 
 #zsh
 [zsh]
 depends = ["shell"]
 
 [zsh.variables]
-config_dir = "~/.config/zsh"
+config_dir = "$HOME/.config/zsh/config"
+script_dir = "$HOME/.config/zsh/script"
 
 [zsh.files]
-"zsh/zshrc" = "~/.config/zsh/.zshrc"
-"zsh/config" = "~/.config/zsh"
+"zsh/zshrc"  = "~/.config/zsh/.zshrc"
+"zsh/config" = "~/.config/zsh/config"
+"zsh/script" = "~/.config/zsh/script"
 
 [zsh.files."zsh/plugins/powerlevel10k"]
 target="~/.oh-my-zsh/themes/powerlevel10k"

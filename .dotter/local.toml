@@ -1,8 +1,9 @@
 includes = []
 packages = [
+    "foot",
     "git",
     "neovim",
-    #"sway",
+    "sway",
     "zsh",
 ]
 

@@ -56,7 +56,7 @@ alias NE='2> /dev/null'
 alias NUL='> /dev/null 2>&1'='| tail'
 
 # printing path
-alias pathln='echo $PATH | tr ':' '\n''
+alias pathln='echo $PATH | tr ":" "\n"'
 
 # suffix alias
 alias -s pdf='evince'
