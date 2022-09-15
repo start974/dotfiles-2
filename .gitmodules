@@ -7,3 +7,9 @@
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "tmux/tpm"]
+	path = tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "tmux/tmux-power"]
+	path = tmux/tmux-power
+	url = git@github.com:wfxr/tmux-power.git

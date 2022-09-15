@@ -22,6 +22,7 @@ arch_pkgs = [
     "mcfly",
     "neovim",
     "ripgrep",
+    "tmux",
     "trash-cli",
     "ttf-fira-code",
     "wget",
@@ -93,6 +94,12 @@ nvim = "~/.config/nvim"
 [sway.files]
 "sway/config.d" = "~/.config/sway/config.d"
 "sway/definition.d" = "~/.config/sway/definitions.d"
+
+[tmux.files]
+"tmux/tmux.conf" = "~/.tmux.conf"
+"tmux/tmux-power" = "~/.tmux/plugins/tmux-power"
+[tmux.variables]
+tmux-power = "~/.tmux/plugins/tmux-power/tmux-power.tmux"
 
 #zsh
 [zsh]
