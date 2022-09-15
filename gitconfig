@@ -1,0 +1,31 @@
+[user]
+    email = {{email}}
+    name = {{name}}
+
+[credential]
+    helper = store
+
+[commit]
+    verbose = true
+
+[core]
+{{#if (is_executable "delta")}}
+    pager = delta
+
+[delta]
+    side-by-side = false
+    line-numbers = true
+    navigate = true
+{{/if}}
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[push]
+    default = "current"
+
+[remote]
+    pushdefault = "origin"

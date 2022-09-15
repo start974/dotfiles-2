@@ -1,6 +1,10 @@
 includes = []
-packages = ["nvim"]
+packages = [
+    "neovim",
+    "git"
+]
 
-[files]
+#[files]
 
-[variables]
+#[variables]
+

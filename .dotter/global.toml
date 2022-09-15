@@ -1,6 +1,16 @@
 [helpers]
 
-[nvim.files]
+[default.variables]
+
+[shell.variables]
+editor = "nvim"
+
+[neovim.files]
 nvim = "~/.config/nvim"
 
-[default.variables]
+[git.files]
+gitconfig = "~/.gitconfig"
+
+[git.variables]
+email = "jeremy.damour2@gmail.com"
+name = "jeremy.damour"
