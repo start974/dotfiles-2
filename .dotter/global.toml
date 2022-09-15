@@ -3,43 +3,30 @@
 [default.variables]
 email = "jeremy.damour2@gmail.com"
 install_pkgs = true
-cargo_pkgs = []
+cargo_pkgs = [
+    "lsd",
+]
 arch_pkgs = [
-    "git",
-    "wget",
-    "neovim",
     "bash-language-server",
-    "git-delta",
     "bat",
-    "trash-cli",
     "bottom",
     "dua-cli",
-    "fd",
-    "ripgrep",
-    "lsd",
-    "mcfly",
+    "eva",
     "evince",
-    "eva"
+    "fd",
+    "git",
+    "git-delta",
+    "lua",
+    "mcfly",
+    "neovim",
+    "ripgrep",
+    "trash-cli",
+    "wget",
+    "zsh-completions"
 ]
 
 [shell.variables]
 editor = "nvim"
-
-#zsh
-[zsh]
-depends = ["shell"]
-
-[zsh.variables]
-config_dir = "~/.config/zsh"
-
-[zsh.files]
-"zsh/zshrc" = "~/.zshrc"
-"zsh/config" = "~/.config/zsh"
-
-#neovim
-[neovim.files]
-nvim = "~/.config/nvim"
-
 #git
 [git]
 depends = ["shell", "default"]
@@ -49,3 +36,35 @@ gitconfig = "~/.gitconfig"
 
 [git.variables]
 name = "jeremy.damour"
+
+#neovim
+[neovim.files]
+nvim = "~/.config/nvim"
+
+#sway
+#[sway.files]
+#"sway/config.d" = "~/.config/sway/config.d"
+#"sway/definition.d" = "~/.config/sway/definitions.d"
+
+#zsh
+[zsh]
+depends = ["shell"]
+
+[zsh.variables]
+config_dir = "~/.config/zsh"
+
+[zsh.files]
+"zsh/zshrc" = "~/.config/zsh/.zshrc"
+"zsh/config" = "~/.config/zsh"
+
+[zsh.files."zsh/plugins/powerlevel10k"]
+target="~/.oh-my-zsh/themes/powerlevel10k"
+type="symbolic"
+
+[zsh.files."zsh/plugins/zsh-autosuggestions"]
+target="~/.oh-my-zsh/plugins/zsh-autosuggestions"
+type="symbolic"
+
+[zsh.files."zsh/plugins/zsh-syntax-highlighting"]
+target="~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+type="symbolic"

@@ -9,3 +9,9 @@ cargo install {{this}}
 {{/each }}
 
 {{/if}}
+
+#omz update
+{{#if not(is_executable omz)}}
+echo isntall "omyzsh"
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+{{/if}}
