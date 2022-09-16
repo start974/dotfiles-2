@@ -58,7 +58,11 @@ alias NUL='> /dev/null 2>&1'='| tail'
 # printing path
 alias pathln='echo $PATH | tr ":" "\n"'
 
+# dotter
+alias dotter='dotter -v'
+
 # suffix alias
-alias -s pdf='evince'
-alias -s html='firefox'
+alias -s pdf='{{pdf-reader}}'
+alias -s html='{{browser}}'
 alias -s py='python'
+

@@ -3,6 +3,7 @@ addPath (){
 }
 # to append path
 addPath "$HOME/.cargo/bin/"
+addPath "$HOME/.local/share/gem/ruby/3.0.0/bin "
 addPath "{{script_dir}}"
 
 # fix editor
@@ -75,3 +76,9 @@ ZSH_AUTOSUGGEST_STRATEGY=("history" "completion")
 
 # mc fly evaluation
 eval "$(mcfly init zsh)"
+
+# source opam
+eval $(opam env)
+
+#direnv
+eval "$(direnv hook zsh)"

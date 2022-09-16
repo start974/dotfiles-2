@@ -17,9 +17,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # auto start tmux
 [[ -z "$TMUX" ]] && exec tmux
 #imports
-source {{config_dir}}/keybind.zsh
-source {{config_dir}}/plugins.zsh
 source {{config_dir}}/variables.zsh
+source {{config_dir}}/plugins.zsh
 source {{config_dir}}/p10k.zsh
+source {{config_dir}}/keybind.zsh
 source {{config_dir}}/alias.zsh
+source {{config_dir}}/hashdir.zsh
 source {{config_dir}}/completion.zsh

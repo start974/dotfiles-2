@@ -4,30 +4,46 @@
 email = "jeremy.damour2@gmail.com"
 install_pkgs = true
 font = "FiraCode"
+# default application
+browser = "firefox"
+file-manager = "pcmanfm"
+pdf-reader="evince"
+# pkgs
 cargo_pkgs = [
     "lsd",
 ]
 arch_pkgs = [
     "bash-language-server",
+    "pcmanfm",
+    "discord",
     "bat",
     "bottom",
+    "direnv",
     "dua-cli",
     "eva",
     "evince",
     "fd",
+    "gcc",
     "git",
     "git-delta",
     "lua",
     "lua-language-server",
     "mcfly",
     "neovim",
+    "npm",
+    "ocaml",
+    "opam",
+    "perl",
     "ripgrep",
+    "ruby",
     "tmux",
     "trash-cli",
     "ttf-fira-code",
     "wget",
-    "zsh-completions"
+    "zsh-completions",
+    #"python3",
 ]
+
 [colors.variables]
 # Black / grey
 color0 = "000000"
@@ -68,6 +84,10 @@ cursor_text_color = "e0bef3"
 
 [shell.variables]
 editor = "nvim"
+
+# discord
+[discord.files]
+"discord.json" = "~/.config/discord/settings.json"
 
 # foot (terminal)
 [foot]

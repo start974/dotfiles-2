@@ -1,5 +1,6 @@
 includes = []
 packages = [
+    "discord",
     "foot",
     "git",
     "neovim",
