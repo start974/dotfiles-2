@@ -1,0 +1,27 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 17,
+    "editor.fontLigatures": true,
+    "editor.rulers": [
+        80
+    ],
+
+    //terminal
+    "terminal.integrated.defaultProfile.linux": "tmux",
+    "terminal.integrated.fontFamily": "'Fira Code', 'RobotoMono Nerd Font', monospace",
+    "terminal.integrated.fontSize": 17,
+
+    // rust
+    "rust-analyzer.server.path": "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer",
+
+    // python
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+
+    // vim
+    "vim.useSystemClipboard": true,
+    "vim.enableNeovim": true,
+    "vim.leader": ",",
+}

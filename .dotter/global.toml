@@ -3,7 +3,7 @@
 [default.variables]
 email = "jeremy.damour2@gmail.com"
 install_pkgs = true
-font = "FiraCode"
+font = "FiraCode Nerd Font Mono"
 # default application
 browser = "firefox"
 file-manager = "pcmanfm"
@@ -41,6 +41,8 @@ arch_pkgs = [
     "ttf-fira-code",
     "wget",
     "zsh-completions",
+    "nix",
+    "rustup",
     #"python3",
 ]
 
@@ -121,6 +123,10 @@ nvim = "~/.config/nvim"
 [tmux.variables]
 tmux-power = "~/.tmux/plugins/tmux-power/tmux-power.tmux"
 
+# vscode
+[vscode.files]
+"vscode_settings.json" = "~/.config/VSCodium/User/settings.json"
+
 #zsh
 [zsh]
 depends = ["shell"]
@@ -144,4 +150,8 @@ type="symbolic"
 
 [zsh.files."zsh/plugins/zsh-syntax-highlighting"]
 target="~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+type="symbolic"
+
+[zsh.files."zsh/plugins/nix-zsh-completions"]
+target="~/.oh-my-zsh/plugins/nix-zsh-completions"
 type="symbolic"

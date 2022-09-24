@@ -61,8 +61,14 @@ alias pathln='echo $PATH | tr ":" "\n"'
 # dotter
 alias dotter='dotter -v'
 
+# sway
+alias sway_find='swaymsg -t get_tree | grep'
+
+# python
+alias pip='python -m pip'
+alias -s py='python'
+
 # suffix alias
 alias -s pdf='{{pdf-reader}}'
 alias -s html='{{browser}}'
-alias -s py='python'
 

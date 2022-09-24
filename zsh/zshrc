@@ -24,3 +24,12 @@ source {{config_dir}}/keybind.zsh
 source {{config_dir}}/alias.zsh
 source {{config_dir}}/hashdir.zsh
 source {{config_dir}}/completion.zsh
+
+# mc fly evaluation
+eval "$(mcfly init zsh)"
+
+# source opam
+eval $(opam env)
+
+#direnv
+eval "$(direnv hook zsh)"

@@ -13,3 +13,6 @@
 [submodule "tmux/tmux-power"]
 	path = tmux/tmux-power
 	url = git@github.com:wfxr/tmux-power.git
+[submodule "zsh/plugins/nix-zsh-completions"]
+	path = zsh/plugins/nix-zsh-completions
+	url = git@github.com:spwhitt/nix-zsh-completions.git

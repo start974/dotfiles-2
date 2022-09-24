@@ -8,14 +8,15 @@
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    #docker
+    #pipenv
     colored-man-pages
     copyfile
-    #docker
     extract
     git
     gitignore
-    #pipenv
-    python
+    nix-zsh-completions
+    #python
     zsh-autosuggestions
     zsh-syntax-highlighting
 )

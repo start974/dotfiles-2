@@ -1,11 +1,3 @@
-addPath (){
-    export PATH="$PATH:$(realpath $1)"
-}
-# to append path
-addPath "$HOME/.cargo/bin/"
-addPath "$HOME/.local/share/gem/ruby/3.0.0/bin "
-addPath "{{script_dir}}"
-
 # fix editor
 export EDITOR={{editor}}
 
@@ -74,11 +66,13 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # auto suggestion
 ZSH_AUTOSUGGEST_STRATEGY=("history" "completion")
 
-# mc fly evaluation
-eval "$(mcfly init zsh)"
 
-# source opam
-eval $(opam env)
+# application on path and init
+addPath (){
+    export PATH="$PATH:$(realpath $1)"
+}
+# to append path
+addPath "{{script_dir}}"
+addPath "$HOME/.local/share/gem/ruby/3.0.0/bin "
+addPath "/snap/bin/"
 
-#direnv
-eval "$(direnv hook zsh)"

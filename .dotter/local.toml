@@ -6,6 +6,7 @@ packages = [
     "neovim",
     "sway",
     "tmux",
+    "vscode",
     "zsh",
 ]
 
