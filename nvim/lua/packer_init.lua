@@ -85,6 +85,9 @@ return packer.startup(function(use)
   -- nix
   use 'LnL7/vim-nix'
 
+  -- smt-lib2
+  use 'bohlender/vim-smt2'
+
   -- ocaml
   use 'ocaml/vim-ocaml'
   --use {
