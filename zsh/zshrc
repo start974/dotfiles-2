@@ -25,6 +25,9 @@ source {{config_dir}}/alias.zsh
 source {{config_dir}}/hashdir.zsh
 source {{config_dir}}/completion.zsh
 
+# zoxy ide
+eval "$(zoxide init zsh)"
+
 # mc fly evaluation
 eval "$(mcfly init zsh)"
 
@@ -33,3 +36,5 @@ eval $(opam env)
 
 #direnv
 eval "$(direnv hook zsh)"
+
+

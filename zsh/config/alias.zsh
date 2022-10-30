@@ -7,6 +7,7 @@ alias grep='rg'
 alias rm='trash-put'
 alias top='btm'
 alias ls='lsd'
+alias cd='z'
 
 alias make='make -j`nproc`'
 alias mv='mv -i'

@@ -122,6 +122,11 @@ _G.packer_plugins = {
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -152,11 +157,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/lustre-syntax",
     url = "https://github.com/vim-scripts/lustre-syntax"
-  },
-  merlin = {
-    loaded = true,
-    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/merlin",
-    url = "https://github.com//home/jdam/.nix-profile/share/merlin/vim/"
   },
   ["monokai.nvim"] = {
     loaded = true,
@@ -209,11 +209,6 @@ _G.packer_plugins = {
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["ocp-indent"] = {
-    loaded = true,
-    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/ocp-indent",
-    url = "https://github.com//home/jdam/.nix-profile/share/ocp-indent/vim/"
-  },
   ["onedark.nvim"] = {
     loaded = true,
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/onedark.nvim",
@@ -239,10 +234,20 @@ _G.packer_plugins = {
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   tagbar = {
     loaded = true,
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/tagbar",
     url = "https://github.com/preservim/tagbar"
+  },
+  ["telescope-zoxide"] = {
+    loaded = true,
+    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/telescope-zoxide",
+    url = "https://github.com/jvgrootveld/telescope-zoxide"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -259,10 +264,20 @@ _G.packer_plugins = {
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/vim-ocaml",
     url = "https://github.com/ocaml/vim-ocaml"
   },
+  ["vim-smt2"] = {
+    loaded = true,
+    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/vim-smt2",
+    url = "https://github.com/bohlender/vim-smt2"
+  },
   ["vim-test"] = {
     loaded = true,
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
+  },
+  ["zoxide.vim"] = {
+    loaded = true,
+    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/zoxide.vim",
+    url = "https://github.com/nanotee/zoxide.vim"
   }
 }
 

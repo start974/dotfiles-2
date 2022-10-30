@@ -75,4 +75,5 @@ addPath (){
 addPath "{{script_dir}}"
 addPath "$HOME/.local/share/gem/ruby/3.0.0/bin "
 addPath "/snap/bin/"
+addPath "$HOME/.cargo/bin/"
 
