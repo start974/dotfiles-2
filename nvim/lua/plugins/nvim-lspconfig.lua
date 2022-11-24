@@ -18,6 +18,19 @@ if not cmp_status_ok then
   return
 end
 
+local status_ok, mason = pcall(require, 'mason')
+if not status_ok then
+  return
+end
+local status_ok, mason_lsp = pcall(require, 'mason-lspconfig')
+if not status_ok then
+  return
+end
+
+-- masion setup
+mason.setup()
+mason_lsp.setup()
+
 -- Diagnostic options, see: `:help vim.diagnostic.config`
 vim.diagnostic.config({
   update_in_insert = true,
@@ -48,15 +61,15 @@ local on_attach = function(client, bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   -- Highlighting references
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]], false)
-  end
+  --if client.resolved_capabilities.document_highlight then
+    --vim.api.nvim_exec([[
+      --augroup lsp_document_highlight
+        --autocmd! * <buffer>
+        --autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        --autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      --augroup END
+    --]], false)
+  --end
 
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -124,6 +137,7 @@ local servers = {
   'ocamllsp',
   'pyright',
   'sumneko_lua',
+  'rust_analyzer',
 }
 
 -- Call setup
@@ -141,3 +155,5 @@ end
 
 -- merlin
 vim.g.syntastic_ocaml_checkers = [[ 'merlin' ]]
+
+

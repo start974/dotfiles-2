@@ -19,6 +19,8 @@ plugins=(
     #python
     zsh-autosuggestions
     zsh-syntax-highlighting
+    alias-finder
+    aliases
 )
 
 source $ZSH/oh-my-zsh.sh

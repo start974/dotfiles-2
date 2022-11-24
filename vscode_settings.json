@@ -28,4 +28,5 @@
     "vim.useSystemClipboard": true,
     "vim.enableNeovim": true,
     "vim.leader": ",",
+    "editor.formatOnPaste": true,
 }

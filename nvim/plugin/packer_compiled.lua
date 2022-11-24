@@ -158,6 +158,16 @@ _G.packer_plugins = {
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/lustre-syntax",
     url = "https://github.com/vim-scripts/lustre-syntax"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/jdam/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["monokai.nvim"] = {
     loaded = true,
     path = "/home/jdam/.local/share/nvim/site/pack/packer/start/monokai.nvim",

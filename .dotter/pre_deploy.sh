@@ -24,6 +24,4 @@ sudo pacman -S snapd
 sudo systemctl enable --now snapd.socket
 {{/if}}
 
-
-
 {{/if}}

@@ -30,6 +30,7 @@ alias l='lsd -l'
 alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
+alias lr='lsd -tlR'
 
 # use eva to make computation
 alias calc='eva'
@@ -47,14 +48,16 @@ alias wgetclip='wget $(wl-paste)'
 alias gcloneclip='git clone $(wl-paste)'
 
 # alias pipe
-alias G='| grep'
-alias H='| head'
-alias L='| less'
-alias T='| tail'
-alias C='| wl-copy'
+alias -g G='| grep'
+alias -g H='| head'
+alias -g L='| less'
+alias -g LL='2>&1 | less'
+alias -g CA='2>&1 | cat -A'
+alias -g T='| tail'
+alias -g C='| wl-copy'
 
-alias NE='2> /dev/null'
-alias NUL='> /dev/null 2>&1'='| tail'
+alias -g NE='2> /dev/null'
+alias -g NUL='> /dev/null 2>&1'='| tail'
 
 # printing path
 alias pathln='echo $PATH | tr ":" "\n"'
@@ -72,4 +75,9 @@ alias -s py='python'
 # suffix alias
 alias -s pdf='{{pdf-reader}}'
 alias -s html='{{browser}}'
+
+alias -s zip='unzip -l'
+alias -s rar='unrar -l'
+alias -s tar='tar tf'
+alias -s tar.gz='echo'
 
