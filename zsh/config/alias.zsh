@@ -43,6 +43,9 @@ alias e='{{editor}}'
 # go to config
 alias config='cd ~/dotfiles/ && {{editor}} . && dotter'
 
+# upgrade system
+alias upgrade='topgrade'
+
 # clipboard alias
 alias wgetclip='wget $(wl-paste)'
 alias gcloneclip='git clone $(wl-paste)'
