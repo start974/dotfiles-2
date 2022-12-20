@@ -8,6 +8,7 @@ font = "FiraCode Nerd Font Mono"
 browser = "firefox"
 file-manager = "pcmanfm"
 pdf-reader="evince"
+terminal="kitty"
 # pkgs
 cargo_pkgs = [
     "lsd",
@@ -29,7 +30,6 @@ arch_pkgs = [
     "lua-language-server",
     "mcfly",
     "neovim",
-    "nix",
     "npm",
     "ocaml",
     "opam",
@@ -103,6 +103,13 @@ depends = ["colors"]
 [foot.files]
 foot = "~/.config/foot/foot.ini"
 
+# kitty (terminal)
+[kitty]
+depends = ["colors"]
+
+[kitty.files]
+"kitty.conf" = "~/.config/kitty/kitty.conf"
+
 #git
 [git]
 depends = ["shell", "default"]
@@ -121,6 +128,10 @@ nvim = "~/.config/nvim"
 [sway.files]
 "sway/config.d" = "~/.config/sway/config.d"
 "sway/definition.d" = "~/.config/sway/definitions.d"
+
+#waybar (sway bar)
+[waybar.files]
+"waybar" = {target="~/.config/waybar/", type="symbolic"}
 
 [tmux.files]
 "tmux/tmux.conf" = "~/.tmux.conf"

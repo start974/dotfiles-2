@@ -22,6 +22,9 @@ alias .6='cd ../../../../..'
 alias .7='cd ../../../../../..'
 alias .8='cd ../../../../../../..'
 
+# mkdir
+alias mkcdtmp='cd $(mktemp -d)'
+
 # sudo easly
 alias '_'='sudo'
 
