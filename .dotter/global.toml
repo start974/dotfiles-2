@@ -9,6 +9,7 @@ browser = "firefox"
 file-manager = "pcmanfm"
 pdf-reader="evince"
 terminal="kitty"
+
 # pkgs
 cargo_pkgs = [
     "lsd",
@@ -33,6 +34,7 @@ arch_pkgs = [
     "npm",
     "ocaml",
     "opam",
+    "pavucontrol",
     "pcmanfm",
     "perl",
     "ripgrep",

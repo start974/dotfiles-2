@@ -9,10 +9,11 @@ packages = [
     "vscode",
     "waybar",
     "zsh",
+    "waybar",
     #"foot",
 ]
 
 #[files]
 
 [variables]
-install_pkgs = false
+install_pkgs = true
