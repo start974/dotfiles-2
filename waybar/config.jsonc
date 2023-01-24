@@ -24,29 +24,35 @@
         "custom/weather",
     ],
     "modules-right": [
-        // informational
-        "keyboard-state",
         //"sway/language",
         "custom/github",
         "custom/clipboard",
-        "custom/zeit",
+        "custom/separator",
+
         // stats
         "temperature",
         "cpu",
         "memory",
         "custom/storage",
         "battery",
+        "idle_inhibitor",
+        "custom/separator",
+
         // connecting
-        "network",
         "backlight",
-        "bluetooth",
         "pulseaudio",
+        "bluetooth",
+        "network",
+        "custom/separator",
+
         // media
         "custom/playerctl",
-        "idle_inhibitor",
         "custom/sunset",
+        "custom/zeit",
         "custom/pacman",
         "custom/dnd",
+        // informational
+        "keyboard-state",
         "tray",
         "clock"
     ],
@@ -184,7 +190,7 @@
             "",
             ""
         ],
-        "tooltip": false,
+        "tooltip": true,
         "on-click": "swaymsg exec \"\\$term_float watch sensors\""
     },
     "cpu": {
@@ -276,11 +282,11 @@
     },
     "pulseaudio": {
         "scroll-step": 10,
-        "format": "{icon} {volume}% {format_source}",
-        "format-muted": "婢 {format_source}",
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format": "{icon}  {format_source}",
+        "format-muted": "婢  {format_source}",
+        "format-bluetooth": "{icon}  {format_source}",
         "format-bluetooth-muted": "{icon}  {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -294,7 +300,7 @@
                 ""
             ],
         },
-        "tooltip-format": "{icon} {volume}% {format_source}",
+        "tooltip-format": "{icon}  {volume}% | {format_source}",
         "on-click": "swaymsg exec pavucontrol",
         "on-click-middle": "swaymsg exec \\$volume_mute",
         "on-scroll-up": "swaymsg exec \\$volume_up",
@@ -379,4 +385,13 @@
     ////"tooltip": false,
     ////"on-click": "swaymsg input $(swaymsg -t get_inputs --raw | jq '[.[] | select(.type == \"keyboard\")][0] | .identifier') xkb_switch_layout next"
     ////},
+
+    // -------------------------------------------------------------------------
+    // Modules multiused
+    // -------------------------------------------------------------------------
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
 }
