@@ -28,3 +28,6 @@
 
 [remote]
     pushdefault = "origin"
+
+[status]
+    submodulesummary = 1
