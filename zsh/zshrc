@@ -14,6 +14,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# completion enable
+autoload -U compinit; compinit
+
 # auto start tmux
 [[ -z "$TMUX" ]] && exec tmux
 #imports
@@ -25,16 +28,15 @@ source {{config_dir}}/alias.zsh
 source {{config_dir}}/hashdir.zsh
 source {{config_dir}}/completion.zsh
 
-# zoxy ide
-eval "$(zoxide init zsh)"
+# direnv
+eval "$(direnv hook zsh)"
 
 # mc fly evaluation
 eval "$(mcfly init zsh)"
 
 # source opam
-eval $(opam env)
+eval "$(opam env)"
 
-#direnv
-eval "$(direnv hook zsh)"
-
+# zoxy ide
+eval "$(zoxide init zsh)"
 

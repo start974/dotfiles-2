@@ -46,6 +46,9 @@ alias e='{{editor}}'
 # go to config
 alias config='cd ~/dotfiles/ && {{editor}} . && dotter'
 
+# update config
+alias conf-update='dotter -v && source ~/.config/zsh/.zshrc'
+
 # upgrade system
 alias upgrade='topgrade'
 
@@ -67,9 +70,6 @@ alias -g NUL='> /dev/null 2>&1'='| tail'
 
 # printing path
 alias pathln='echo $PATH | tr ":" "\n"'
-
-# dotter
-alias dotter='dotter -v'
 
 # sway
 alias sway_find='swaymsg -t get_tree | grep'

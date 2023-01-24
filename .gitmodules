@@ -16,3 +16,6 @@
 [submodule "zsh/plugins/nix-zsh-completions"]
 	path = zsh/plugins/nix-zsh-completions
 	url = git@github.com:spwhitt/nix-zsh-completions.git
+[submodule "zsh/themes/powerlevel10k"]
+	path = zsh/themes/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git

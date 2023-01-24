@@ -37,6 +37,7 @@ arch_pkgs = [
     "pavucontrol",
     "pcmanfm",
     "perl",
+    "python-shtab",
     "ripgrep",
     "ruby",
     "rustup",
@@ -135,9 +136,11 @@ nvim = "~/.config/nvim"
 [waybar.files]
 "waybar" = {target="~/.config/waybar/", type="symbolic"}
 
+# tmux
 [tmux.files]
 "tmux/tmux.conf" = "~/.tmux.conf"
 "tmux/tmux-power" = "~/.tmux/plugins/tmux-power"
+
 [tmux.variables]
 tmux-power = "~/.tmux/plugins/tmux-power/tmux-power.tmux"
 
@@ -158,18 +161,10 @@ script_dir = "$HOME/.config/zsh/script"
 "zsh/config" = "~/.config/zsh/config"
 "zsh/script" = "~/.config/zsh/script"
 
-[zsh.files."zsh/plugins/powerlevel10k"]
-target="~/.oh-my-zsh/themes/powerlevel10k"
+[zsh.files."zsh/themes/"]
+target="~/.oh-my-zsh/custom/themes/"
 type="symbolic"
 
-[zsh.files."zsh/plugins/zsh-autosuggestions"]
-target="~/.oh-my-zsh/plugins/zsh-autosuggestions"
-type="symbolic"
-
-[zsh.files."zsh/plugins/zsh-syntax-highlighting"]
-target="~/.oh-my-zsh/plugins/zsh-syntax-highlighting"
-type="symbolic"
-
-[zsh.files."zsh/plugins/nix-zsh-completions"]
-target="~/.oh-my-zsh/plugins/nix-zsh-completions"
+[zsh.files."zsh/plugins/"]
+target="~/.oh-my-zsh/custom/plugins/"
 type="symbolic"
