@@ -170,8 +170,8 @@
             "stopped": ""
         },
         "exec": "~/.config/waybar/modules/zeit.sh status",
-        "on-click": "~/.config/waybar/modules/zeit.sh click; pkill -RTMIN+10 waybar",
-        "exec-if": "[ -x \"$(command -v zeit)\" ]",
+        "on-click": "~/.config/waybar/modules/zeit.sh on-click;",
+        "exec-if": "~/.config/waybar/modules/zeit.sh exec-if;",
         "signal": 10
     },
     // Hardware

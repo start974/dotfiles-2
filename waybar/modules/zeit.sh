@@ -1,28 +1,33 @@
 #!/bin/sh
 tracking=$(zeit tracking --no-colors)
 
-if [[ "$1" == "status" ]]
-then
-    text=$(echo -n $tracking | grep -q 'tracking' && echo "tracking" || echo "stopped")
+case $1 in
+'exec-if')
+    [ -x "$(command -v zeit)" ] ||
+    exit 1
+    ;;
+
+'status')
+    text=$(echo -n $tracking | grep -q 'tracking' &&
+        echo "tracking" || echo "stopped")
     tooltip=$tracking'\r(zeit time tracker)'
     echo {\"text\":\"$text\"\,\"tooltip\":\"$tooltip\"\,\"class\":\"$text\"\,\"alt\":\"$text\"}
-fi
+    ;;
 
-if [[ "$1" == "click" ]]
-then
+'on-click')
   if echo "$tracking" | grep -q 'tracking'
   then
     zeit finish
   else
     swaymsg exec \$zeit_list
   fi
-fi
+  pkill -RTMIN+10 waybar
+    ;;
 
-if [[ "$1" == "track" ]]
-then
+'track')
     input=$(cat -)
-    task=$(echo $input | pcregrep -io1 '└── (.+) \[.+')
-    project=$(echo $input | pcregrep -io1 '.+\[(.+)\]')
+    task=$(echo "$input" | pcregrep -io1 '└── (.+) \[.+')
+    project=$(echo "$input" | pcregrep -io1 '.+\[(.+)\]')
 
     if [[ "$task" == "" ]] || [[ "$project" == "" ]]
     then
@@ -32,4 +37,9 @@ then
 
     zeit track -p "$project" -t "$task"
     notify-send "Tracking $task in $project"
-fi
+    ;;
+*)
+    exit 1
+    ;;
+esac
+
