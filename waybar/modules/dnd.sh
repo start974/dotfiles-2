@@ -5,8 +5,7 @@ then
            echo dnd || echo default)
     mode=$(makoctl mode | tail -1)
 
-    printf '{\"alt\":\"%s\",\"tooltip\":\"mode: %s\"}'
-        "$alt" "$mode"
+    printf '{\"alt\":\"%s\",\"tooltip\":\"mode: %s\"}' "$alt" "$mode"
 fi
 
 if [[ "$1" == "click" ]]
