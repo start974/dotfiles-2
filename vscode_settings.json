@@ -7,18 +7,25 @@
         80
     ],
     "editor.inlayHints.enabled": "on",
-    
+
     //terminal
     "terminal.integrated.fontFamily": "'Fira Code', 'RobotoMono Nerd Font', monospace",
     "terminal.integrated.fontSize": 17,
-    
+
     // tmux
+    "terminal.integrated.profiles.linux": {
+        "bash": null,
+        "tmux": {
+            "path": "zsh",
+            "args": ["-c", "tmux new -ADs ${PWD##*/}"],
+            "icon": "terminal-tmux",
+        },
+    },
     "terminal.integrated.defaultProfile.linux": "tmux",
-    "terminal.integrated.macOptionClickForcesSelection": true,
-    
+
     // rust
     "rust-analyzer.server.path": "~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rust-analyzer",
-    
+
     // python
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
@@ -29,4 +36,7 @@
     "vim.enableNeovim": true,
     "vim.leader": ",",
     "editor.formatOnPaste": true,
+
+   // tabline
+    "tabnine.experimentalAutoImports": true,
 }

@@ -1,11 +1,11 @@
 [jdam_nas]
 is_set=false
 text_source=/home/jdam/Project
-text_dest=Jdam@192.168.1.16::NetBackup/xps13/
+text_dest=Jdam@192.168.1.2::NetBackup/xps13/
 text_notes=
 text_com_before=
 text_com_after=
-text_addit=--password-file=/home/jdam/.backup_pass
+text_addit=-e ssh
 check_time=true
 check_perm=true
 check_owner=false
@@ -17,7 +17,7 @@ check_delete=false
 check_exist=false
 check_size=false
 check_skipnew=false
-check_windows=true
+check_windows=false
 check_sum=false
 check_symlink=false
 check_hardlink=false
