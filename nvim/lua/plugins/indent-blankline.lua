@@ -8,6 +8,7 @@
 
 local status_ok, indent_blankline = pcall(require, 'indent_blankline')
 if not status_ok then
+  print("cannot configure 'ident blankline'")
   return
 end
 

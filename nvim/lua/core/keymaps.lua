@@ -17,13 +17,6 @@ vim.g.mapleader = ','
 -- Neovim shortcuts
 -----------------------------------------------------------
 
-
--- Disable arrow keys
---map('', '<up>', '<nop>')
---map('', '<down>', '<nop>')
---map('', '<left>', '<nop>')
---map('', '<right>', '<nop>')
-
 -- Clear search highlighting with <leader> and c
 map('n', '??', ':nohl<CR>')
 
@@ -40,6 +33,16 @@ map('n', '<C-l>', '<C-w>l')
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
+-- move text between line
+map('v', "J", ":m '>+1<CR>gv=gv")
+map('v', "K", ":m '<-2<CR>gv=gv")
+
+-- move to current line with space
+map('n', "J", "mzJ`z")
+
+-- paste withour copy select
+map('x', "<leader>p", "\"_dP")
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
@@ -48,10 +51,6 @@ map('n', '<leader>r', ':so %<CR>')
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
--- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
