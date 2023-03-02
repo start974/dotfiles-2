@@ -4,14 +4,6 @@
 
 -- See: https://github.com/brainfucksec/neovim-lua#appearance
 
--- Load nvim color scheme:
--- Change the "require" values with your color scheme
--- Available color schemes: onedark, monokai, rose-pine
-local status_ok, color_scheme = pcall(require, 'monokai')
-if not status_ok then
-  return
-end
-
 -- Note: The instruction to load the color scheme may vary.
 -- See the README of the selected color scheme for the instruction
 -- to use.

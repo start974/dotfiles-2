@@ -1,43 +1,69 @@
 [default.variables]
 
 pkgs = [
-    "bash-language-server",
-    "bat",
-    "bottom",
-    "direnv",
+# replacement of builtin
+    "bat",                  # replace cat
+    "bottom",               # replace top
+    "ctags",                # for tagbar nvim plug
+    "dua-cli",              # replace du
+    "fd",                   # replace find
+    "lsd",                  # replace ls
+    "mcfly",                # shell-history
+    "ripgrep",              # replace grep
+    "trash-cli",            # replace rm with a trash
+    "zoxide",               # replace cd
+
+# other rust application
+    "eva",                  # make calculator
+
+# application
     "discord",
-    "dua-cli",
-    "eva",
     "evince",
-    "fd",
-    "gcc",
+
+# dev tool
     "git",
-    "git-delta",
+    "git-delta",           # new diff
+    "glow",                # markdow view
+    "neovim",              # editor
+    "python-shtab",        # generate shell completion
+    "tmux",                # terminal multiplexer
+    "wget",                # get webpage
+    "zsh",                 # shell
+    "zsh-completions",     # completion for zsh
+
+# extraction
+    "tar",
+    "unrar",
+    "unzip",
+
+# compilers / builder
+    "gcc",
     "lua",
-    "lua-language-server",
-    "mcfly",
-    "neovim",
     "npm",
     "ocaml",
     "opam",
-    "pavucontrol",
-    "pcmanfm",
     "perl",
-    "python-shtab",
-    "ripgrep",
     "ruby",
     "rustup",
-    "tar",
-    "tmux",
-    "topgrade",
-    "trash-cli",
-    "ttf-fira-code",
-    "unrar",
-    "unzip",
-    "wget",
-    "zoxide",
-    "zsh-completions",
     #"python3",
-]
-pm_install = "pamac install"
 
+# system
+    "pavucontrol",
+    "pcmanfm",
+    "topgrade",
+
+# font
+    "ttf-fira-code",
+
+# lsp server
+    "bash-language-server", # bash lsp
+    "ctags",                # tags in vim
+    "lua-language-server",  # lua lsp
+]
+
+# cargo pkgs
+cargo_pkgs = [
+]
+
+pm_install = "pamac install"
+pm_update = "pamac update"

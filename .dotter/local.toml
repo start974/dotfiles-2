@@ -19,4 +19,5 @@ packages = [
 #[files]
 
 [variables]
-install_pkgs = true
+install_pkgs = false
+update_pkgs = false

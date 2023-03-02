@@ -35,14 +35,8 @@ vim.cmd [[
   augroup end
 ]]
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, 'packer')
-if not status_ok then
-  return
-end
-
 -- Install plugins
-return packer.startup(function(use)
+return require('packer').startup(function(use)
   -- Add you plugins here:
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
@@ -66,6 +60,9 @@ return packer.startup(function(use)
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
+  -- tab
+  use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+
   -- Tag viewer
   use 'preservim/tagbar'
 
@@ -80,6 +77,7 @@ return packer.startup(function(use)
   use 'navarasu/onedark.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
+  -- lsp
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
@@ -103,6 +101,9 @@ return packer.startup(function(use)
     }
   }
 
+  -- tabline (ia)
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+
   -- nix
   use 'LnL7/vim-nix'
 
@@ -119,7 +120,9 @@ return packer.startup(function(use)
   use 'vim-scripts/lustre-syntax'
 
   -- Markdown
-  use "ellisonleao/glow.nvim"
+  use {"ellisonleao/glow.nvim", config = function()
+    require("glow").setup()
+  end}
 
   -- rust
   use 'simrat39/rust-tools.nvim'

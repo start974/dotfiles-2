@@ -10,11 +10,6 @@ file-manager = "pcmanfm"
 pdf-reader="evince"
 terminal="kitty"
 
-# pkgs
-cargo_pkgs = [
-    "lsd",
-]
-
 [colors.variables]
 # Black / grey
 color0 = "000000"
@@ -83,6 +78,9 @@ gitconfig = "~/.gitconfig"
 [git.variables]
 name = "jeremy.damour"
 
+# glow Markdow viewer
+[glow.files]
+"glow.yml" = "~/.config/glow/glow.ml"
 #neovim (editor)
 [neovim.files]
 nvim = "~/.config/nvim"

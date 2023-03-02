@@ -8,6 +8,7 @@ alias rm='trash-put'
 alias top='btm'
 alias ls='lsd'
 alias cd='z'
+alias cdi='zi'
 
 alias make='make -j`nproc`'
 alias mv='mv -i'

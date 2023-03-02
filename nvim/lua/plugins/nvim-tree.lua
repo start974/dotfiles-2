@@ -7,11 +7,7 @@
 
 -- Keybindings are defined in `core/keymaps.lua`:
 -- https://github.com/kyazdani42/nvim-tree.lua#keybindings
-local status_ok, nvim_tree = pcall(require, 'nvim-tree')
-if not status_ok then
-  print("cannot configure 'nvim-tree'")
-  return
-end
+local nvim_tree = require("nvim-tree")
 
 nvim_tree.setup({
   -- Changes how files within the same directory are sorted.
@@ -25,11 +21,6 @@ nvim_tree.setup({
   -- Update the focused file on `BufEnter`
   update_focused_file = {
     enable = true,
-  },
-  -- Git integration
-  git = {
-    -- Not ignore files based on `.gitignore`
-    ignore = false,
   },
 
   -- ui redering
@@ -56,13 +47,13 @@ nvim_tree.setup({
       enable = false;
 
     }
+  },
+  -- filter files/ directories
+  filters = {
+    dotfiles = false,
+    custom = { '^.git$' }
   }
 })
-
--- mapping
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-vim.keymap.set('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 
 -- Open For Directories And Change Neovim's Directory

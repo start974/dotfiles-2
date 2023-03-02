@@ -32,6 +32,23 @@ autocmd('BufEnter', {
   command = 'set fo-=c fo-=r fo-=o'
 })
 
+-- Barbar with nvim-tree
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  callback = function(tbl)
+    if vim.bo[tbl.buf].filetype == 'NvimTree' then
+      require'bufferline.api'.set_offset(31, 'FileTree')
+    end
+  end
+})
+
+vim.api.nvim_create_autocmd({'BufWinLeave', 'BufWipeout'}, {
+  callback = function(tbl)
+    if vim.bo[tbl.buf].filetype == 'NvimTree' then
+      require'bufferline.api'.set_offset(0)
+    end
+  end
+})
+
 -- Settings for filetypes:
 --------------------------
 
@@ -52,6 +69,7 @@ autocmd('Filetype', {
   },
   command = 'setlocal shiftwidth=2 tabstop=2'
 })
+
 
 -- Terminal settings:
 ---------------------

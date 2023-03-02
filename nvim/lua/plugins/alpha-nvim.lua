@@ -8,11 +8,7 @@
 -- For configuration examples see: https://github.com/goolord/alpha-nvim/discussions/16
 
 
-local status_ok, alpha = pcall(require, 'alpha')
-if not status_ok then
-  print("cannot configure 'alpha'")
-  return
-end
+local alpha = require('alpha')
 
 local dashboard = require('alpha.themes.dashboard')
 
