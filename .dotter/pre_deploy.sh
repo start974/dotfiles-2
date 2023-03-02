@@ -4,11 +4,13 @@ set -xe
 {{#if install_pkgs}}
 
 
-pamac install {{#each arch_pkgs }} "{{this}}" {{/each}}
+{{pm_install}} {{#each pkgs }} "{{this}}" {{/each}}
 
+{{#if not(is_executable snap)}}
 {{#each cargo_pkgs }}
 cargo install {{this}}
 {{/each }}
+{{/if}}
 
 
 {{#if not(is_executable omz)}}

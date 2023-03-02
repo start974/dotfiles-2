@@ -1,4 +1,7 @@
-includes = []
+includes = [
+    ".dotter/arch.toml"
+]
+
 packages = [
     "discord",
     "git",
