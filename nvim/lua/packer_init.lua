@@ -14,8 +14,9 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
+local packer_bootstrap = false
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({
+  packer_bootstrap = fn.system({
     'git',
     'clone',
     '--depth',
@@ -110,14 +111,6 @@ return packer.startup(function(use)
 
   -- ocaml
   use 'ocaml/vim-ocaml'
-  --use {
-    --'$HOME/.nix-profile/share/merlin/vim/',
-    --as = 'merlin',
-  --}
-  --use {
-    --'$HOME/.nix-profile/share/ocp-indent/vim/',
-    --as = 'ocp-indent',
-  --}
 
   -- Coq
   use 'whonore/Coqtail'
@@ -127,11 +120,6 @@ return packer.startup(function(use)
 
   -- Markdown
   use "ellisonleao/glow.nvim"
-
-  --use {
-    --"iamcco/markdown-preview.nvim",
-    --run = function() vim.fn["mkdp#util#install"]() end,
-  --}
 
   -- rust
   use 'simrat39/rust-tools.nvim'
