@@ -2,8 +2,8 @@
 -- Neovim LSP configuration file
 -----------------------------------------------------------
 
--- Plugin: nvim-lspconfig
--- url:
+-- Plugin: lsp-zero
+-- url: https://github.com/VonHeikemen/lsp-zero.nvim
 
 local lsp = require('lsp-zero')
 
@@ -19,12 +19,14 @@ lsp.preset({
 })
 
 -- setup lua nvim nvim workspace
+---------------------------------------------------------------
 lsp.nvim_workspace()
 
 -- change lsp server
 lsp.skip_server_setup({'rust_analyzer'})
 
 -- key binding
+---------------------------------------------------------------
 lsp.on_attach(function(_, bufnr)
   local opts = {buffer = bufnr}
   local bind = vim.keymap.set
@@ -33,43 +35,34 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 -- cmp configurations
-local cmp = require('cmp')
-
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-
+---------------------------------------------------------------
 lsp.setup_nvim_cmp({
-  mapping = lsp.defaults.cmp_mappings({
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<Tab>'] = vim.NIL,
-    ['<S-Tab>'] = vim.NIL,
-  }),
+--[[  mapping = lsp.defaults.cmp_mappings({]]
+    --[[['<C-Space>'] = cmp.mapping.complete(),]]
+    --[[['<Tab>'] = vim.NIL,]]
+    --[[['<S-Tab>'] = vim.NIL,]]
+  --[[}),]]
   sources = {
     {name = 'path'},
     {name = 'nvim_lsp'},
-    {name = 'buffer', keyword_length = 3},
+    {name = 'cmp_tabnine'},
     {name = 'luasnip', keyword_length = 2},
+    {name = 'buffer', keyword_length = 3},
   },
 })
-
 -- setup lsp
+---------------------------------------------------------------
 lsp.setup()
 
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-
-local cmp_config = lsp.defaults.cmp_config({
-  window = {
-    completion = cmp.config.window.bordered()
-  }
-})
-
-cmp.setup(cmp_config)
 -- rust tool integration
+---------------------------------------------------------------
 require('rust-tools').setup({
   server = lsp.build_options('rust_analyzer', {})
 })
 
 
 -- diagnostic
+---------------------------------------------------------------
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
@@ -78,3 +71,7 @@ vim.diagnostic.config({
   severity_sort = false,
   float = true,
 })
+
+-- snippet
+---------------------------------------------------------------
+require("luasnip.loaders.from_snipmate").load()

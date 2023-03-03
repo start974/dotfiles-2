@@ -97,12 +97,16 @@ return require('packer').startup(function(use)
 
       -- Snippets
       {'L3MON4D3/LuaSnip'},             -- Required
-      {'rafamadriz/friendly-snippets'}, -- Optional
+      -- {'rafamadriz/friendly-snippets'}, -- Optional
     }
   }
 
   -- tabline (ia)
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+ 	use {
+    'tzachar/cmp-tabnine',
+    run='./install.sh',
+    requires = 'hrsh7th/nvim-cmp'
+}
 
   -- nix
   use 'LnL7/vim-nix'
