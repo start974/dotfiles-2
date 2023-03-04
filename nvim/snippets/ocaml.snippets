@@ -1,0 +1,62 @@
+snippet doc
+	(** ${0:${VISUAL}} *)
+
+snippet comment
+	(* ${0:${VISUAL}} *)
+
+snippet let "make a let in "
+	let ${1} = ${2} in
+	${0:${VISUAL}}
+
+snippet fn "make a function"
+	let ${1:name} ${2:args} =
+		${0:{VISUAL}}
+
+snippet fnr "recursive function"
+	let rec ${1} =
+		${0}
+
+snippet const "make a constant definition"
+	let ${1:c} = ${0:{VISUAL}}
+
+snippet func "make a function match"
+	function
+	| ${2:} -> ${0}
+
+snippet type "make a type"
+	type ${1} = ${0}
+
+snippet mod "make a module"
+	module ${1} = struct
+		${0:${VISUAL}}
+	end
+
+snippet modty "make a module type"
+	module type ${1:module name} = sig
+		${0:${VISUAL}}
+	end
+
+snippet match
+	match ${1:${VISUAL}} with
+	| ${2:pattern} -> ${0:expr}
+
+snippet |
+	| ${1} -> ${0}
+
+snippet if
+	if ${1: cond} then
+		${2:${VISUAL}}
+	else
+		${0}
+
+snippet try
+	try
+		${1:${VISUAL}}
+	with
+	| ${1} -> ${0}
+
+snippet letpp "pp printing"
+	let pp_${1:type} fmt $1 =
+		Format.fprint fmt "${2:fmt}" ${0:expr}
+
+

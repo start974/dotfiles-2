@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
 
   -- Tag viewer
   use 'preservim/tagbar'
+  use 'delphinus/cmp-ctags'      -- ctags
 
   -- Treesitter interface
   use {
@@ -77,36 +78,29 @@ return require('packer').startup(function(use)
   use 'navarasu/onedark.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
-  -- lsp
+  -- lsp config
+  use {"neovim/nvim-lspconfig"}
+
+  -- Autocompletion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp
+  use 'hrsh7th/cmp-buffer'       -- cmp use buffer
+  use 'hrsh7th/cmp-path'         -- cmp use path
+  use 'hrsh7th/cmp-cmdline'      -- command line
   use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},         -- Required
-      {'hrsh7th/cmp-nvim-lsp'},     -- Required
-      {'hrsh7th/cmp-buffer'},       -- Optional
-      {'hrsh7th/cmp-path'},         -- Optional
-      {'saadparwaiz1/cmp_luasnip'}, -- Optional
-      {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-      -- Snippets
-      {'L3MON4D3/LuaSnip'},             -- Required
-      -- {'rafamadriz/friendly-snippets'}, -- Optional
-    }
-  }
-
-  -- tabline (ia)
- 	use {
-    'tzachar/cmp-tabnine',
+    'tzachar/cmp-tabnine',       -- tabline (ia)
     run='./install.sh',
     requires = 'hrsh7th/nvim-cmp'
-}
+  }
+  use 'saadparwaiz1/cmp_luasnip'  -- snippets
+  use 'hrsh7th/cmp-nvim-lua'      -- configuration in vim
+
+  -- fuzzy path
+  use {'tzachar/cmp-fuzzy-path', requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}} -- auto complete
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+
+  -- Snippets
+  use 'L3MON4D3/LuaSnip'
 
   -- nix
   use 'LnL7/vim-nix'
