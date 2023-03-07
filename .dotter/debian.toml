@@ -2,10 +2,52 @@
 [default.variables]
 
 pkgs = [
+
+# application
+    # "discord",
+    "evince",
+
+# dev tool
+    "git",
+    #"glow",                # markdow view -- install manually (view on github)
+    "neovim",              # editor
+    "tmux",                # terminal multiplexer
+    "wget",                # get webpage
+    "zsh",                 # shell
+
+# extraction
+    "tar",
+    "unrar",
+    "unzip",
+
+# compilers / builder
+    "gcc",
+    "lua5.4",
+    "npm",
+    "ocaml",
+    "opam",
+    "perl",
+    "ruby",
+    #"rustup",
+    #"python3",
+
+# system
+    "pavucontrol",
+    "pcmanfm",
+
+# font
+    "fonts-firacode",
+
+# lsp server
+    "universal-ctags",                # tags in vim
+]
+
+# cargo pkgs
+cargo_pkgs = [
+
 # replacement of builtin
     "bat",                  # replace cat
     "bottom",               # replace top
-    "ctags",                # for tagbar nvim plug
     "dua-cli",              # replace du
     "fd",                   # replace find
     "lsd",                  # replace ls
@@ -17,56 +59,26 @@ pkgs = [
 # other rust application
     "eva",                  # make calculator
 
-# application
-    # "discord",
-    "evince",
-
 # dev tool
-    "git",
-    "git-delta",           # new diff
-    "glow",                # markdow view
-    "neovim",              # editor
-    "python-shtab",        # generate shell completion
-    "tmux",                # terminal multiplexer
-    "wget",                # get webpage
-    "zsh",                 # shell
-    "zsh-completions",     # completion for zsh
-
-# extraction
-    "tar",
-    "unrar",
-    "unzip",
-
-# compilers / builder
-    "gcc",
-    "lua",
-    "npm",
-    "ocaml",
-    "opam",
-    "perl",
-    "ruby",
-    "rustup",
-    #"python3",
+    "git-delta",            # new diff
 
 # system
-    "pavucontrol",
-    "pcmanfm",
     "topgrade",
+]
 
-# font
-    "ttf-fira-code",
+#python package
+pip_pkgs = [
+    "shab"                  # generate shell completion
 
+]
+
+# npm package
+npm_pkgs = [
 # lsp server
     "bash-language-server", # bash lsp
-    "ctags",                # tags in vim
     "lua-language-server",  # lua lsp
     "taplo"                 # toml
 ]
 
-# cargo pkgs
-cargo_pkgs = [
-]
-
-
-pm_install = "apt-get install"
-pm_update = "apt-get update"
+pm_install = "sudo apt-get install"
+pm_update = "sudo apt-get update"

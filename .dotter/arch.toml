@@ -66,5 +66,17 @@ pkgs = [
 cargo_pkgs = [
 ]
 
+#python pkgs
+pip_pkgs = [
+]
+
+# npm pkgs
+npm_pkgs = [
+# lsp server
+    "bash-language-server", # bash lsp
+    "lua-language-server",  # lua lsp
+    "taplo"                 # toml
+]
+
 pm_install = "pamac install"
 pm_update = "pamac update"
