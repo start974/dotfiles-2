@@ -59,6 +59,7 @@ return require('packer').startup(function(use)
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
+  use 'onsails/lspkind.nvim'
 
   -- tab
   use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
@@ -87,6 +88,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'       -- cmp use buffer
   use 'hrsh7th/cmp-path'         -- cmp use path
   use 'hrsh7th/cmp-cmdline'      -- command line
+  use 'hrsh7th/cmp-calc'         -- calcultate
   use {
     'tzachar/cmp-tabnine',       -- tabline (ia)
     run='./install.sh',
