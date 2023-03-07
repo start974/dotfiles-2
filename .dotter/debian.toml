@@ -60,6 +60,7 @@ pkgs = [
     "bash-language-server", # bash lsp
     "ctags",                # tags in vim
     "lua-language-server",  # lua lsp
+    "taplo"                 # toml
 ]
 
 # cargo pkgs
