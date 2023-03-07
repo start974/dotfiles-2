@@ -1,3 +1,4 @@
+
 [default.variables]
 
 pkgs = [
@@ -17,7 +18,7 @@ pkgs = [
     "eva",                  # make calculator
 
 # application
-    "discord",
+    # "discord",
     "evince",
 
 # dev tool
@@ -65,19 +66,17 @@ pkgs = [
 cargo_pkgs = [
 ]
 
-
-
 packages = [
-    "discord",
+    #"discord",
     "git",
     "kitty",
     "neovim",
-    "sway",
+    #"sway",
     "tmux",
-    "vscode",
+    #"vscode",
+    #"waybar",
     "zsh",
     #"foot",
 ]
-
-pm_install = "pamac install"
-pm_update = "pamac update"
+pm_install = "apt-get install"
+pm_update = "apt-get update"

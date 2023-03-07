@@ -1,0 +1,9 @@
+includes = [
+    ".dotter/<system>.toml"
+]
+
+#[files]
+
+[variables]
+install_pkgs = false
+update_pkgs = false
