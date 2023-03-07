@@ -1,28 +1,13 @@
 [default.variables]
 
-pkgs = [
-# replacement of builtin
-    "bat",                  # replace cat
-    "bottom",               # replace top
-    "ctags",                # for tagbar nvim plug
-    "dua-cli",              # replace du
-    "fd",                   # replace find
-    "lsd",                  # replace ls
-    "mcfly",                # shell-history
-    "ripgrep",              # replace grep
-    "trash-cli",            # replace rm with a trash
-    "zoxide",               # replace cd
-
-# other rust application
-    "eva",                  # make calculator
-
+sys_pkgs = [
 # application
     "discord",
-    "evince",
+    "kitty",                # terminal
+    "evince",               # pdf viewer
 
 # dev tool
     "git",
-    "git-delta",           # new diff
     "glow",                # markdow view
     "neovim",              # editor
     "python-shtab",        # generate shell completion
@@ -45,12 +30,11 @@ pkgs = [
     "perl",
     "ruby",
     "rustup",
-    #"python3",
+    "python-pip",
 
 # system
     "pavucontrol",
     "pcmanfm",
-    "topgrade",
 
 # font
     "ttf-fira-code",
@@ -62,21 +46,5 @@ pkgs = [
     "taplo"                 # toml
 ]
 
-# cargo pkgs
-cargo_pkgs = [
-]
-
-#python pkgs
-pip_pkgs = [
-]
-
-# npm pkgs
-npm_pkgs = [
-# lsp server
-    "bash-language-server", # bash lsp
-    "lua-language-server",  # lua lsp
-    "taplo"                 # toml
-]
-
-pm_install = "pamac install"
-pm_update = "pamac update"
+sys_install = "pamac install"
+sys_update = "pamac update"

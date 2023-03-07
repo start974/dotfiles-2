@@ -1,11 +1,12 @@
 
 [default.variables]
 
-pkgs = [
+sys_pkgs = [
 
 # application
     # "discord",
-    "evince",
+    "kitty",                # terminal
+    "evince",               # pdf viewer
 
 # dev tool
     "git",
@@ -29,7 +30,7 @@ pkgs = [
     "perl",
     "ruby",
     #"rustup",
-    #"python3",
+    "python3-pip",
 
 # system
     "pavucontrol",
@@ -42,43 +43,5 @@ pkgs = [
     "universal-ctags",                # tags in vim
 ]
 
-# cargo pkgs
-cargo_pkgs = [
-
-# replacement of builtin
-    "bat",                  # replace cat
-    "bottom",               # replace top
-    "dua-cli",              # replace du
-    "fd",                   # replace find
-    "lsd",                  # replace ls
-    "mcfly",                # shell-history
-    "ripgrep",              # replace grep
-    "trash-cli",            # replace rm with a trash
-    "zoxide",               # replace cd
-
-# other rust application
-    "eva",                  # make calculator
-
-# dev tool
-    "git-delta",            # new diff
-
-# system
-    "topgrade",
-]
-
-#python package
-pip_pkgs = [
-    "shab"                  # generate shell completion
-
-]
-
-# npm package
-npm_pkgs = [
-# lsp server
-    "bash-language-server", # bash lsp
-    "lua-language-server",  # lua lsp
-    "taplo"                 # toml
-]
-
-pm_install = "sudo apt-get install"
-pm_update = "sudo apt-get update"
+sys_install = "sudo apt-get install"
+sys_update = "sudo apt-get update"

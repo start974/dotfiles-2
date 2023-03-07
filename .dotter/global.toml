@@ -10,6 +10,40 @@ file-manager = "pcmanfm"
 pdf-reader="evince"
 terminal="kitty"
 
+[default.variables.pkgs]
+
+# cargo pkgs
+cargo = [
+# replacement of builtin
+    "bat",                  # replace cat
+    "bottom",               # replace top
+    "dua-cli",              # replace du
+    "fd-find",              # replace find
+    "lsd",                  # replace ls
+    "mcfly",                # shell-history
+    "ripgrep",              # replace grep
+    "zoxide",               # replace cd
+
+# other rust application
+    "eva",                  # make calculator
+
+# dev tool
+    "git-delta",            # new diff
+
+# system
+    "topgrade",
+]
+
+#python package
+pip = [
+    # replacement of builtin
+    "trash-cli",            # replace rm with a trash
+    "shtab"                 # generate shell completion
+
+]
+
+# npm package
+
 [colors.variables]
 # Black / grey
 color0 = "000000"
