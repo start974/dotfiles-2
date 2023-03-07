@@ -4,6 +4,19 @@ includes = [
 
 #[files]
 
+packages = [
+    "discord",
+    "git",
+    "kitty",
+    "neovim",
+    "sway",
+    "tmux",
+    "vscode",
+    "waybar",
+    "zsh",
+    #"foot",
+]
+
 [variables]
 install_pkgs = false
 update_pkgs = false

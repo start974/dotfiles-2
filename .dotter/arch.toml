@@ -66,19 +66,5 @@ pkgs = [
 cargo_pkgs = [
 ]
 
-
-
-packages = [
-    "discord",
-    "git",
-    "kitty",
-    "neovim",
-    "sway",
-    "tmux",
-    "vscode",
-    "zsh",
-    #"foot",
-]
-
 pm_install = "pamac install"
 pm_update = "pamac update"

@@ -67,17 +67,6 @@ pkgs = [
 cargo_pkgs = [
 ]
 
-packages = [
-    #"discord",
-    "git",
-    "kitty",
-    "neovim",
-    #"sway",
-    "tmux",
-    #"vscode",
-    #"waybar",
-    "zsh",
-    #"foot",
-]
+
 pm_install = "apt-get install"
 pm_update = "apt-get update"
