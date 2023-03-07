@@ -29,14 +29,18 @@ source {{config_dir}}/hashdir.zsh
 source {{config_dir}}/completion.zsh
 
 # direnv
+{{#if is_executable direnv}}
 eval "$(direnv hook zsh)"
+{{/if}}
 
-# mc fly evaluation
-eval "$(mcfly init zsh)"
 
 # source opam
+{{#if is_executable opam}}
 eval "$(opam env)"
+{{/if}}
 
 # zoxy ide
 eval "$(zoxide init zsh)"
 
+# mc fly evaluation
+eval "$(mcfly init zsh)"

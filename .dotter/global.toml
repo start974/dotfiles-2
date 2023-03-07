@@ -150,6 +150,7 @@ script_dir = "$HOME/.config/zsh/script"
 
 [zsh.files]
 "zsh/zshrc"  = "~/.config/zsh/.zshrc"
+"zsh/zshenv"  = "~/.zshenv"
 "zsh/config" = "~/.config/zsh/config"
 "zsh/script" = "~/.config/zsh/script"
 

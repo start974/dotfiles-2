@@ -75,7 +75,15 @@ addPath (){
 }
 # to append path
 addPath "{{script_dir}}"
-addPath "$HOME/.local/share/gem/ruby/3.0.0/bin "
-addPath "/snap/bin/"
-addPath "$HOME/.cargo/bin/"
 
+{{#if is_executable ruby}}
+addPath "$HOME/.local/share/gem/ruby/3.0.0/bin "
+{{/if}}
+
+{{#if is_executable snap}}
+addPath "/snap/bin/"
+{{/if}}
+
+{{#if is_executable cargo}}
+addPath "$HOME/.cargo/bin/"
+{{/if}}
