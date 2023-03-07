@@ -31,7 +31,7 @@ set -ex
 
     cargo install {{#each pkgs.cargo }} "{{this}}" {{/each }}
 
-    pip install {{#each pkgs.pip }} "{{this}}" {{/each }}
+    python3 -m pip install {{#each pkgs.pip }} "{{this}}" {{/each }}
 
 
 
