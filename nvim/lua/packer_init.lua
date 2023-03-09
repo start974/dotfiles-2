@@ -82,6 +82,11 @@ return require('packer').startup(function(use)
   -- lsp config
   use {"neovim/nvim-lspconfig"}
 
+  -- massion auto install plugins
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim"
+  }
   -- Autocompletion
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp

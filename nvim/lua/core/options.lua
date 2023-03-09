@@ -41,7 +41,7 @@ opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus=3            -- Set global statusline
 
-opt.wrap = false            -- desactive text vrapping
+opt.wrap = true            -- active text vrapping
 opt.scrolloff = 5           -- scrolling if 5 line
 
 -----------------------------------------------------------

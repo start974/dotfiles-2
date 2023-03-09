@@ -10,9 +10,9 @@ vim.g.mapleader = ','
 -- Neovim shortcuts
 -----------------------------------------------------------
 -- desactive arrow
-for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
-  map('n', key, '<nop>')
-end
+--for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
+  --map('n', key, '<nop>')
+--end
 -- Clear search highlighting with <leader> and c
 map('n', '??', ':nohl<CR>')
 

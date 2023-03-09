@@ -1,9 +1,15 @@
 -----------------------------------------------------------
 -- Neovim LSP configuration file
 -----------------------------------------------------------
+
+-- Plugin: mason
+-- url: https://github.com/williamboman/mason-lspconfig.nvim
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+
 -- Plugin: lsp-config
 -- url: https://github.com/neovim/nvim-lspconfig
--- wiki:
 local vdiag = vim.diagnostic
 local map = vim.keymap.set
 local fn = vim.fn
