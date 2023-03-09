@@ -65,6 +65,8 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 
 # auto suggestion
 ZSH_AUTOSUGGEST_STRATEGY=("history" "completion")
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#696969"
+
 
 # zsh-completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
