@@ -54,19 +54,6 @@ map('n', '<C-k>', ':Neoformat<CR>')
 ---------------------
 map('n', '<leader>u', vim.cmd.UndotreeToggle)
 
--- nvim tree
----------------------
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-vim.keymap.set('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
-
--- telescope
----------------------
-local telescope = require('telescope.builtin')
-map('n', '<leader>ff', telescope.find_files)
-map('n', '<leader>fg', telescope.live_grep)
-map('n', '<leader>fb', telescope.buffers, {})
-map('n', '<leader>fh', telescope.help_tags, {})
 
 -- Barbar
 ---------------------

@@ -73,3 +73,10 @@ local function open_nvim_tree(data)
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+
+-- map
+---------------------
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
+vim.keymap.set('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
+vim.keymap.set('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file

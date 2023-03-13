@@ -14,5 +14,6 @@ require('plugins/lua-snip')
 require('plugins/nvim-tree')
 require('plugins/tabnine')
 require('plugins/treesitter')
+require('plugins/telescope')
 
 
