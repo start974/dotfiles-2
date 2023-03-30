@@ -6,7 +6,7 @@ require('core/statusline')
 require('core/autocmds')
 
 require('plugins/alpha-nvim')
-require('plugins/barbar')
+require('plugins/bufferline')
 require('plugins/indent-blankline')
 require('plugins/lsp-config')
 require('plugins/nvim-cmp')
@@ -15,5 +15,6 @@ require('plugins/nvim-tree')
 require('plugins/tabnine')
 require('plugins/treesitter')
 require('plugins/telescope')
+
 
 

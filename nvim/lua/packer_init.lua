@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind.nvim'
 
   -- tab
-  use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- Tag viewer
   use 'preservim/tagbar'
@@ -95,7 +95,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'      -- command line
   use 'hrsh7th/cmp-calc'         -- calcultate
   use {
-    'tzachar/cmp-tabnine',       -- tabline (ia)
+    'tzachar/cmp-tabnine',       -- tabnine (ia)
     run='./install.sh',
     requires = 'hrsh7th/nvim-cmp'
   }
