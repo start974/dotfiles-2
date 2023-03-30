@@ -5,8 +5,8 @@
 -- Define autocommands with Lua APIs
 -- See: h:api-autocmd, h:augroup
 
-local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
-local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
+local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
+local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- General settings:
 --------------------
@@ -30,23 +30,6 @@ autocmd('BufWritePre', {
 autocmd('BufEnter', {
   pattern = '',
   command = 'set fo-=c fo-=r fo-=o'
-})
-
--- Barbar with nvim-tree
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  callback = function(tbl)
-    if vim.bo[tbl.buf].filetype == 'NvimTree' then
-      require'bufferline.api'.set_offset(31, 'FileTree')
-    end
-  end
-})
-
-vim.api.nvim_create_autocmd({'BufWinLeave', 'BufWipeout'}, {
-  callback = function(tbl)
-    if vim.bo[tbl.buf].filetype == 'NvimTree' then
-      require'bufferline.api'.set_offset(0)
-    end
-  end
 })
 
 -- Settings for filetypes:
