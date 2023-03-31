@@ -41,7 +41,7 @@ opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus=3            -- Set global statusline
 
-opt.wrap = true            -- active text vrapping
+opt.wrap = true             -- active text vrapping
 opt.scrolloff = 5           -- scrolling if 5 line
 
 -----------------------------------------------------------
@@ -57,6 +57,7 @@ opt.smartcase = true        -- Ignore lowercase for the whole pattern
 opt.expandtab = true        -- Use spaces instead of tabs
 opt.shiftwidth = 4          -- Shift 4 spaces when tab
 opt.tabstop = 4             -- 1 tab == 4 spaces
+opt.softtabstop = 4         -- shift on edit mod
 opt.smartindent = true      -- Autoindent new lines
 
 -----------------------------------------------------------

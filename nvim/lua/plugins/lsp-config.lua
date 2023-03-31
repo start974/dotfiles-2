@@ -27,7 +27,6 @@ local opts = { noremap = true, silent = true }
 map('n', '<space>e', vdiag.open_float, opts)
 map('n', '[d', vdiag.goto_prev, opts)
 map('n', ']d', vdiag.goto_next, opts)
-map('n', '<space>q', vdiag.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -82,29 +81,29 @@ end
 
 -- configure lua with workspace
 lsp_conf.lua_ls.setup {
-    on_attach = on_attach,
-    settings = {
-      Lua = {
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = "LuaJIT",
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { "vim" },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files,
+        -- see also https://github.com/LuaLS/lua-language-server/wiki/Libraries#link-to-workspace .
+        -- Lua-dev.nvim also has similar settings for lua ls, https://github.com/folke/neodev.nvim/blob/main/lua/neodev/luals.lua .
+        library = {
+          fn.stdpath("data") .. "/site/pack/packer/opt/emmylua-nvim",
+          fn.stdpath("config"),
         },
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { "vim" },
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files,
-          -- see also https://github.com/LuaLS/lua-language-server/wiki/Libraries#link-to-workspace .
-          -- Lua-dev.nvim also has similar settings for lua ls, https://github.com/folke/neodev.nvim/blob/main/lua/neodev/luals.lua .
-          library = {
-            fn.stdpath("data") .. "/site/pack/packer/opt/emmylua-nvim",
-            fn.stdpath("config"),
-          },
-          maxPreload = 2000,
-          preloadFileSize = 50000,
-        },
+        maxPreload = 2000,
+        preloadFileSize = 50000,
       },
     },
-    capabilities = capabilities,
-  }
+  },
+  capabilities = capabilities,
+}

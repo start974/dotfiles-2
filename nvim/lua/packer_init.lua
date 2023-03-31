@@ -46,16 +46,6 @@ return require('packer').startup(function(use)
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
 
-  -- formating
-  use 'sbdchd/neoformat'
-
-  -- Autopair
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup{}
-    end
-  }
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -78,6 +68,14 @@ return require('packer').startup(function(use)
   use 'tanvirtin/monokai.nvim'
   use 'navarasu/onedark.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
+
+  -- Autopair
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('nvim-autopairs').setup{}
+    end
+  }
 
   -- lsp config
   use {"neovim/nvim-lspconfig"}
