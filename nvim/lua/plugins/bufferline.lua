@@ -9,9 +9,9 @@ require('bufferline').setup {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
     numbers = "ordinal",
     close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-    right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+    right_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-    middle_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+    middle_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     indicator = {
       icon = '▎', -- this should be omitted if indicator style is not 'icon'
       style = 'icon',
@@ -24,7 +24,7 @@ require('bufferline').setup {
     max_name_length = 18,
     max_prefix_length = 8, -- prefix used when a buffer is de-duplicated
     truncate_names = true, -- whether or not tab names should be truncated
-    tab_size = 18,
+    tab_size = 15,
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
     -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
