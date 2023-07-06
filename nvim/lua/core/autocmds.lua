@@ -7,7 +7,7 @@
 
 local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
-
+local opt = vim.o -- Set options (global/buffer/windows-scoped)
 -- General settings:
 --------------------
 
@@ -31,6 +31,14 @@ autocmd('BufEnter', {
   pattern = '',
   command = 'set fo-=c fo-=r fo-=o'
 })
+
+-- auto reload
+opt.autoread = true
+autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
+
 
 -- Settings for filetypes:
 --------------------------

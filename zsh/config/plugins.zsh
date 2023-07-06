@@ -21,6 +21,7 @@ plugins=(
     zsh-syntax-highlighting
     alias-finder
     aliases
+    z
 )
 
 source $ZSH/oh-my-zsh.sh

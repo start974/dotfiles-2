@@ -53,3 +53,9 @@ map('n', '<C-k>', ':Neoformat<CR>')
 -- undo tree
 ---------------------
 map('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+-- formatting
+---------------------
+map({ "n", "v" }, "<space>f", function()
+  vim.lsp.buf.format({ async = true })
+end)

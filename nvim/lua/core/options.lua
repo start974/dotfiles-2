@@ -28,7 +28,7 @@ opt.undofile = true                   -- undo file active
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true           -- Show line number
-opt.relativenumber = true   -- add relative number
+opt.relativenumber = false  -- relative number
 opt.showmatch = true        -- Highlight matching parenthesis
 opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
 opt.colorcolumn = '80'      -- Line lenght marker at 80 columns

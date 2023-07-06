@@ -52,11 +52,11 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind.nvim'
 
   -- tab
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
   -- Tag viewer
   use 'preservim/tagbar'
-  use 'delphinus/cmp-ctags'      -- ctags
+  use 'delphinus/cmp-ctags' -- ctags
 
   -- Treesitter interface
   use {
@@ -73,36 +73,47 @@ return require('packer').startup(function(use)
   use {
     'windwp/nvim-autopairs',
     config = function()
-      require('nvim-autopairs').setup{}
+      require('nvim-autopairs').setup {}
     end
   }
 
   -- lsp config
-  use {"neovim/nvim-lspconfig"}
+  use { "neovim/nvim-lspconfig" }
 
-  -- massion auto install plugins
+  -- mason auto install plugins
   use {
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim"
+    "williamboman/mason-lspconfig.nvim",
+    "jay-babu/mason-null-ls.nvim",
   }
+  -- formation
+
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
+
   -- Autocompletion
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp
-  use 'hrsh7th/cmp-buffer'       -- cmp use buffer
-  use 'hrsh7th/cmp-path'         -- cmp use path
-  use 'hrsh7th/cmp-cmdline'      -- command line
-  use 'hrsh7th/cmp-calc'         -- calcultate
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'hrsh7th/cmp-buffer'   -- cmp use buffer
+  use 'hrsh7th/cmp-path'     -- cmp use path
+  use 'hrsh7th/cmp-cmdline'  -- command line
+  use 'hrsh7th/cmp-calc'     -- calcultate
   use {
-    'tzachar/cmp-tabnine',       -- tabnine (ia)
-    run='./install.sh',
+    'tzachar/cmp-tabnine',   -- tabnine (ia)
+    run = './install.sh',
     requires = 'hrsh7th/nvim-cmp'
   }
-  use 'saadparwaiz1/cmp_luasnip'  -- snippets
-  use 'hrsh7th/cmp-nvim-lua'      -- configuration in vim
+  use 'saadparwaiz1/cmp_luasnip' -- snippets
+  use 'hrsh7th/cmp-nvim-lua'     -- configuration in vim
 
   -- fuzzy path
-  use {'tzachar/cmp-fuzzy-path', requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}} -- auto complete
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+  use { 'tzachar/cmp-fuzzy-path', requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' } } -- auto complete
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Snippets
   use 'L3MON4D3/LuaSnip'
@@ -123,9 +134,9 @@ return require('packer').startup(function(use)
   use 'vim-scripts/lustre-syntax'
 
   -- Markdown
-  use {"ellisonleao/glow.nvim", config = function()
+  use { "ellisonleao/glow.nvim", config = function()
     require("glow").setup()
-  end}
+  end }
 
   -- rust
   use 'simrat39/rust-tools.nvim'
@@ -156,7 +167,7 @@ return require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('gitsigns').setup{}
+      require('gitsigns').setup {}
     end
   }
 
@@ -171,10 +182,10 @@ return require('packer').startup(function(use)
     'jvgrootveld/telescope-zoxide',
 
     requires = {
-      {'nvim-telescope/telescope.nvim'},
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
-      {'nanotee/zoxide.vim'},
+      { 'nvim-telescope/telescope.nvim' },
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nanotee/zoxide.vim' },
     }
   }
 
@@ -183,9 +194,9 @@ return require('packer').startup(function(use)
     'sudormrfbin/cheatsheet.nvim',
 
     requires = {
-      {'nvim-telescope/telescope.nvim'},
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
+      { 'nvim-telescope/telescope.nvim' },
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
     }
   }
 
@@ -195,4 +206,3 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-
