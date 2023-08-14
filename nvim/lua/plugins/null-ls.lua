@@ -1,23 +1,16 @@
------------------------------------------------------------
--- Neovim formating configuration
------------------------------------------------------------
-
--- Plugin: null-ls
--- url: https://github.com/jose-elias-alvarez/null-ls.nvim
-
--- Plugin: mason-null-ls
--- url: https://github.com/jay-babu/mason-null-ls.nvim
-
-require("mason").setup()
-require("mason-null-ls").setup({
-	ensure_installed = {
-		-- Opt to list sources here, when available in mason.
-	},
-	automatic_installation = false,
-	handlers = {},
-})
-
-local null_ls = require("null-ls")
-null_ls.setup({
-	sources = {},
-})
+return {
+  'jay-babu/mason-null-ls.nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
+  dependencies = { 'mason.nvim', 'jose-elias-alvarez/null-ls.nvim' },
+  config = function()
+    local nls = require 'null-ls'
+    nls.setup {
+      root_dir = require('null-ls.utils').root_pattern('.null-ls-root', 'Makefile', '.git'),
+      sources = {
+        nls.builtins.formatting.stylua,
+        nls.builtins.formatting.shfmt,
+        nls.builtins.diagnostics.flake8,
+      },
+    }
+  end,
+}

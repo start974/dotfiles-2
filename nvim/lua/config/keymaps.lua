@@ -11,7 +11,7 @@ vim.g.mapleader = ','
 -----------------------------------------------------------
 -- desactive arrow
 --for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
-  --map('n', key, '<nop>')
+--map('n', key, '<nop>')
 --end
 -- Clear search highlighting with <leader> and c
 map('n', '??', ':nohl<CR>')
@@ -24,14 +24,14 @@ vim.opt.pastetoggle = '<leader>p'
 map('n', '<leader>r', ':so %<CR>')
 
 -- move text between line
-map('v', "J", ":m '>+1<CR>gv=gv")
-map('v', "K", ":m '<-2<CR>gv=gv")
+map('v', 'J', ":m '>+1<CR>gv=gv")
+map('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- move to current line with space
-map('n', "J", "mzJ`z")
+map('n', 'J', 'mzJ`z')
 
 -- paste withour copy select
-map('x', "<leader>p", "\"_dP")
+map('x', '<leader>p', '"_dP')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
@@ -39,12 +39,12 @@ map('x', "<leader>p", "\"_dP")
 
 -- Terminal
 ---------------------
-map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
-map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
+map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
+map('t', '<Esc>', '<C-\\><C-n>')                   -- exit
 
 -- Tagbar
 ---------------------
-map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
 
 -- neofromater
 ---------------------
@@ -56,6 +56,6 @@ map('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- formatting
 ---------------------
-map({ "n", "v" }, "<space>f", function()
-  vim.lsp.buf.format({ async = true })
+map({ 'n', 'v' }, '<space>f', function()
+  vim.lsp.buf.format { async = true }
 end)
