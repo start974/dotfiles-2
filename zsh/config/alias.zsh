@@ -1,14 +1,42 @@
-#builtin replace
+#builtin replacemen
+{{#if (is_executable "bat")}}
 alias cat='bat'
+{{/if}}
+
+{{#if (is_executable "delta")}}
 alias diff='delta'
+{{/if}}
+
+{{#if (is_executable "dua")}}
 alias du='dua i'
+{{/if}}
+
+{{#if (is_executable "fd")}}
 alias find='fd'
+{{/if}}
+
+{{#if (is_executable "rg")}}
 alias grep='rg'
+{{/if}}
+
+{{#if (is_executable "trash-put")}}
 alias rm='trash-put'
+{{/if}}
+
+{{#if (is_executable "btm")}}
 alias top='btm'
+{{/if}}
+
+{{#if (is_executable "lsd")}}
 alias ls='lsd'
+alias lt='lsd --tree'
+alias lr='lsd -tlR'
+{{/if}}
+
+{{#if (is_executable "zoxide")}}
 alias cd='z'
 alias cdi='zi'
+{{/if}}
 
 alias make='make -j`nproc`'
 alias mv='mv -i'
@@ -30,14 +58,14 @@ alias mkcdtmp='cd $(mktemp -d)'
 alias '_'='sudo'
 
 # lsd alias
-alias l='lsd -l'
-alias la='lsd -a'
-alias lla='lsd -la'
-alias lt='lsd --tree'
-alias lr='lsd -tlR'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
 
 # use eva to make computation
+{{#if (is_executable "eva")}}
 alias calc='eva'
+{{/if}}
 
 # vim alias
 alias vim='nvim'
