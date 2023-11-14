@@ -12,6 +12,9 @@ set -ex
 
 {{#if install_pkgs}}
 
+# pull submodules
+git submodule update --recursive
+
 # install omz
     {{#if not(is_executable omz)}}
         #omz update

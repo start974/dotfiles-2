@@ -7,38 +7,38 @@ font = "FiraCode Nerd Font Mono"
 # default application
 browser = "firefox"
 file-manager = "pcmanfm"
-pdf-reader="evince"
-terminal="kitty"
+pdf-reader = "evince"
+terminal = "kitty"
 
 [default.variables.pkgs]
 
 # cargo pkgs
 cargo = [
-# replacement of builtin
-    "bat",                  # replace cat
-    "bottom",               # replace top
-    "dua-cli",              # replace du
-    "fd-find",              # replace find
-    "lsd",                  # replace ls
-    "mcfly",                # shell-history
-    "ripgrep",              # replace grep
-    "zoxide",               # replace cd
+    # replacement of builtin
+    "bat",     # replace cat
+    "bottom",  # replace top
+    "dua-cli", # replace du
+    "fd-find", # replace find
+    "lsd",     # replace ls
+    "mcfly",   # shell-history
+    "ripgrep", # replace grep
+    "zoxide",  # replace cd
 
-# other rust application
-    "eva",                  # make calculator
+    # other rust application
+    "eva", # make calculator
 
-# dev tool
-    "git-delta",            # new diff
+    # dev tool
+    "git-delta", # new diff
 
-# system
+    # system
     "topgrade",
 ]
 
 #python package
 pip = [
     # replacement of builtin
-    "trash-cli",            # replace rm with a trash
-    "shtab"                 # generate shell completion
+    "trash-cli", # replace rm with a trash
+    "shtab",     # generate shell completion
 
 ]
 
@@ -55,27 +55,27 @@ color9 = "F50606"
 
 # Green=
 color2 = "5ddc7b"
-color10= "09B540"
+color10 = "09B540"
 
 # Yellow
 color3 = "e6e871"
-color11= "f1ef06"
+color11 = "f1ef06"
 
 # Blue
 color4 = "157ef1"
-color12= "0a54a4"
+color12 = "0a54a4"
 
 # Magenta
 color5 = "9c37da"
-color13= "640c9b"
+color13 = "640c9b"
 
 # Cyan
 color6 = "0fceba"
-color14= "068973"
+color14 = "068973"
 
 # white
 color7 = "e8e8e8"
-color15= "ffffff"
+color15 = "ffffff"
 
 # cursor
 cursor = "7a5Eae"
@@ -115,6 +115,7 @@ name = "jeremy.damour"
 # glow Markdow viewer
 [glow.files]
 "glow.yml" = "~/.config/glow/glow.ml"
+
 #neovim (editor)
 [neovim.files]
 nvim = "~/.config/nvim"
@@ -126,7 +127,7 @@ nvim = "~/.config/nvim"
 
 #waybar (sway bar)
 [waybar.files]
-"waybar" = {target="~/.config/waybar/", type="symbolic"}
+"waybar" = { target = "~/.config/waybar/", type = "symbolic" }
 
 # tmux
 [tmux.files]
@@ -149,15 +150,15 @@ config_dir = "$HOME/.config/zsh/config"
 script_dir = "$HOME/.config/zsh/script"
 
 [zsh.files]
-"zsh/zshrc"  = "~/.config/zsh/.zshrc"
-"zsh/zshenv"  = "~/.zshenv"
+"zsh/zshrc" = "~/.config/zsh/.zshrc"
+"zsh/zshenv" = "~/.zshenv"
 "zsh/config" = "~/.config/zsh/config"
 "zsh/script" = "~/.config/zsh/script"
 
 [zsh.files."zsh/themes/"]
-target="~/.oh-my-zsh/custom/themes/"
-type="symbolic"
+target = "~/.oh-my-zsh/custom/themes/"
+type = "symbolic"
 
 [zsh.files."zsh/plugins/"]
-target="~/.oh-my-zsh/custom/plugins/"
-type="symbolic"
+target = "~/.oh-my-zsh/custom/plugins/"
+type = "symbolic"

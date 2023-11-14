@@ -3,25 +3,25 @@
 
 sys_pkgs = [
 
-# application
+    ## application
     # "discord",
-    "kitty",                # terminal
-    "evince",               # pdf viewer
+    "kitty",  # terminal
+    "evince", # pdf viewer
 
-# dev tool
+    ## dev tool
     "git",
     #"glow",                # markdow view -- install manually (view on github)
-    "neovim",              # editor
-    "tmux",                # terminal multiplexer
-    "wget",                # get webpage
-    "zsh",                 # shell
+    "neovim", # editor
+    "tmux",   # terminal multiplexer
+    "wget",   # get webpage
+    "zsh",    # shell
 
-# extraction
+    ## extraction
     "tar",
     "unrar",
     "unzip",
 
-# compilers / builder
+    ## compilers / builder
     "gcc",
     "lua5.4",
     "npm",
@@ -32,15 +32,15 @@ sys_pkgs = [
     #"rustup",
     "python3-pip",
 
-# system
+    ## system
     "pavucontrol",
     "pcmanfm",
 
-# font
+    ## font
     "fonts-firacode",
 
-# lsp server
-    "universal-ctags",                # tags in vim
+    ## lsp server
+    "universal-ctags", # tags in vim
 ]
 
 sys_install = "sudo apt-get install"

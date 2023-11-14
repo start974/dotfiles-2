@@ -1,6 +1,4 @@
-includes = [
-    ".dotter/<system>.toml"
-]
+includes = [".dotter/<system>.toml"]
 
 #[files]
 

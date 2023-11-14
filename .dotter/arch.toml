@@ -1,27 +1,27 @@
 [default.variables]
 
 sys_pkgs = [
-# application
+    # application
     "discord",
-    "kitty",                # terminal
-    "evince",               # pdf viewer
+    "kitty",   # terminal
+    "evince",  # pdf viewer
 
-# dev tool
+    # dev tool
     "git",
-    "glow",                # markdow view
-    "neovim",              # editor
-    "python-shtab",        # generate shell completion
-    "tmux",                # terminal multiplexer
-    "wget",                # get webpage
-    "zsh",                 # shell
-    "zsh-completions",     # completion for zsh
+    "glow",            # markdow view
+    "neovim",          # editor
+    "python-shtab",    # generate shell completion
+    "tmux",            # terminal multiplexer
+    "wget",            # get webpage
+    "zsh",             # shell
+    "zsh-completions", # completion for zsh
 
-# extraction
+    # extraction
     "tar",
     "unrar",
     "unzip",
 
-# compilers / builder
+    # compilers / builder
     "gcc",
     "lua",
     "npm",
@@ -32,18 +32,18 @@ sys_pkgs = [
     "rustup",
     "python-pip",
 
-# system
+    # system
     "pavucontrol",
     "pcmanfm",
 
-# font
+    # font
     "ttf-fira-code",
 
-# lsp server
+    # lsp server
     "bash-language-server", # bash lsp
     "ctags",                # tags in vim
     "lua-language-server",  # lua lsp
-    "taplo"                 # toml
+    "taplo",                # toml
 ]
 
 sys_install = "pamac install"
