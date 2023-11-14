@@ -88,7 +88,7 @@ addPath "$HOME/.cargo/bin/"
 
 {{#if (is_executable "ruby")}}
 # ruby
-addPath "$HOME/.local/share/gem/ruby/3.0.0/bin "
+addPath $(gem environment gemdir)
 {{/if}}
 
 # snap
