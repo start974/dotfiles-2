@@ -104,7 +104,7 @@ alias pathln='echo $PATH | tr ":" "\n"'
 alias sway_find='swaymsg -t get_tree | grep'
 
 # python
-alias pip='python -m pip'
+#alias pip='python -m pip'
 alias -s py='python'
 
 # suffix alias

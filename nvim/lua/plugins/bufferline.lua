@@ -6,7 +6,7 @@ return {
   },
   event = 'VeryLazy',
   lazy = false,
-  config = {
+  opts = {
     options = {
       numbers = 'ordinals',
       diagnostics = 'nvim_lsp',

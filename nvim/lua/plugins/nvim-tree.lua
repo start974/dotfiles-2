@@ -5,7 +5,7 @@ return {
     'nvim-tree/nvim-web-devicons',
     lazy = true,
   },
-  config = {
+  opts = {
     -- Changes how files within the same directory are sorted.
     sort_by = 'case_sensitive',
     -- Keeps the cursor on the first letter of the filename when moving in the tree.
