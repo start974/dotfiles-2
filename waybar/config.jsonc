@@ -242,11 +242,11 @@
     "network": {
         "interval": 5,
         "format": "{icon}",
-        "tooltip-format": "{ifname} ({essid}): {ipaddr}",
+        "tooltip-format": "{icon} {ifname}: {ipaddr}",
         "format-disconnected": "睊",
         "format-icons": {
             "wifi": [
-                "",
+                ""
             ],
             "ethernet": [
                 ""
@@ -255,7 +255,11 @@
                 "睊"
             ]
         },
-        "on-click": "nm-connection-editor",
+        "tooltip-format-ethernet": "{icon} {ifname}: {ipaddr}",
+        "tooltip-format-wifi": "{icon} {ifname} ({essid}): {ipaddr}",
+        "tooltip-format-disconnected": "{icon} disconnected",
+        "tooltip-format-disabled": "{icon} disabled",
+        "on-click": "swaymsg exec \\$once \\$term_float nmtui connect"
     },
     "backlight": {
         "format": "{icon} {percent}%",
