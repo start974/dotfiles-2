@@ -1,4 +1,5 @@
 return {
   'ellisonleao/glow.nvim',
-  --event = "BufferEnter *.md"
+  config = true,
+  cmd = 'Glow'
 }

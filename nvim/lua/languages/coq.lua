@@ -1,4 +1,9 @@
 return {
-  'whonore/Coqtail',
-  --event = "BufferEnter *.v"
+  {
+    'whonore/Coqtail',
+    --event = "BufferEnter *.v"
+  },
+  {
+
+  },
 }

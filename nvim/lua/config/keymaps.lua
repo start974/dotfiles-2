@@ -30,7 +30,7 @@ map('v', 'K', ":m '<-2<CR>gv=gv")
 -- move to current line with space
 map('n', 'J', 'mzJ`z')
 
--- paste withour copy select
+-- paste without copy select
 map('x', '<leader>p', '"_dP')
 
 -----------------------------------------------------------
@@ -45,10 +45,6 @@ map('t', '<Esc>', '<C-\\><C-n>')                   -- exit
 -- Tagbar
 ---------------------
 map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
-
--- neofromater
----------------------
-map('n', '<C-k>', ':Neoformat<CR>')
 
 -- undo tree
 ---------------------
