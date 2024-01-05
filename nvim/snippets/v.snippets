@@ -1,0 +1,30 @@
+snippet Mod "make a module"
+    Module ${1:name}.
+		${0:${VISUAL}}
+    End ${1}
+
+snippet ModT "make a module Type"
+    Module Type ${1:name}.
+		${0:${VISUAL}}
+    End ${1}
+
+snippet ClasR "make a module Type"
+    Class ${0:name} := {
+		${1}
+	}.
+
+snippet Sec "make a Section"
+    Section ${1:name}.
+		${0:${VISUAL}}
+    End ${1}.
+
+snippet Sec "Create a variable"
+    Variable ${0} : ${1}.
+
+snippet Def "Create a definition"
+    Definition ${0:name} ${1:var} :=
+		${2:body}.
+
+snippet Fix "Create a Fixpoint"
+    Fixpoint ${0:name} ${1:var} :=
+		${2:body}.
