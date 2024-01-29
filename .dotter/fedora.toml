@@ -23,7 +23,7 @@ sys_pkgs = [
 
     ## compilers / builder
     "gcc",
-    "lua5.4",
+    "lua",
     "npm",
     "ocaml",
     "opam",
@@ -37,10 +37,10 @@ sys_pkgs = [
     "pcmanfm",
 
     ## font
-    "fonts-firacode",
+    "fira-code-fonts",
 
     ## lsp server
-    "universal-ctags", # tags in vim
+    #"universal-ctags", # tags in vim
 ]
 
 sys_install = "sudo dnf install"
