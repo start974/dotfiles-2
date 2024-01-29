@@ -91,8 +91,8 @@ addPath "$HOME/.cargo/bin/"
 addPath "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 {{/if}}
 
-# snap
 {{#if (is_executable "snap")}}
+# snap
 addPath "/snap/bin/"
 {{/if}}
 
