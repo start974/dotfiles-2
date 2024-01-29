@@ -122,7 +122,7 @@ nvim = "~/.config/nvim"
 
 #sway
 [sway.files]
-"sway/config.d" = "~/.config/sway/config.d"
+"sway" = "~/.config/sway/"
 
 #waybar (sway bar)
 [waybar.files]
