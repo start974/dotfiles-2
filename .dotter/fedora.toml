@@ -1,0 +1,47 @@
+
+[default.variables]
+
+sys_pkgs = [
+
+    ## application
+    # "discord",
+    "kitty",  # terminal
+    "evince", # pdf viewer
+
+    ## dev tool
+    "git",
+    #"glow",                # markdow view -- install manually (view on github)
+    "neovim", # editor
+    "tmux",   # terminal multiplexer
+    "wget",   # get webpage
+    "zsh",    # shell
+
+    ## extraction
+    "tar",
+    "unrar",
+    "unzip",
+
+    ## compilers / builder
+    "gcc",
+    "lua5.4",
+    "npm",
+    "ocaml",
+    "opam",
+    "perl",
+    "ruby",
+    #"rustup",
+    "python3-pip",
+
+    ## system
+    "pavucontrol",
+    "pcmanfm",
+
+    ## font
+    "fonts-firacode",
+
+    ## lsp server
+    "universal-ctags", # tags in vim
+]
+
+sys_install = "sudo dnf install"
+sys_update = "sudo dnf update"
