@@ -88,7 +88,7 @@ addPath "$HOME/.cargo/bin/"
 
 {{#if (is_executable "ruby")}}
 # ruby
-addPath "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
+#addPath "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
 {{/if}}
 
 {{#if (is_executable "snap")}}
