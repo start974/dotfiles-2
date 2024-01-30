@@ -8,6 +8,7 @@ packages = [
     "kitty",
     "neovim",
     "sway",
+    "swaylock",
     "tmux",
     "vscode",
     "waybar",
