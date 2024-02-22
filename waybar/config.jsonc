@@ -31,8 +31,8 @@
             "on": " " // Icon shows only when "consume" is on
         },
         "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-            "on": " "
+            "off": " ", // Icon grayed out when "random" is off
+            "on": " "
         },
         "repeat-icons": {
             "on": " "
@@ -48,59 +48,55 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
     "cpu": {
         "tooltip": false,
-        "format": " {}%"
+        "format": "{}% "
     },
 
     "memory": {
         "tooltip": false,
-        "format": " {}%"
+        "format": "{}% "
     },
 
-
     "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
         "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
 
-
-    /*"network": {*/
-        /*"format": "{ifname}}",*/
-        /*"format-wifi": "{essid} {signalStrength}% ",*/
-        /*"format-ethernet": "{ipaddr}/{cidr} 󰊗",*/
-        /*"tooltip-format": "{ifname} via {gwaddr} 󰊗",*/
-        /*"tooltip-format-wifi": "{essid}  ({signalStrength}%)",*/
-        /*"tooltip-format-ethernet": "{ifname} ",*/
-        /*"tooltip-format-disconnected": "Disconnected",*/
-        /*"tooltip-format-disable": "Disabled",*/
-        /*"max-length": 100,*/
-        /*"on-click": "nm-connection-editor",*/
-    /*},*/
-
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+      "format": "{ifname}",
+      "format-wifi": "{essid} ",
+      "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+      "format-disconnected": "No Network 󰖪",
     },
 
     "bluetooth": {
-        "format": " {status}",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+      "format": "{status} ",
+      "format-connected": "{num_connections} ",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
     },
 
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} 󰗾",
         "format-muted": "",
         "format-icons": {
             "headphone": "",
@@ -109,7 +105,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
         },
         "scroll-step": 1,
         "on-click": "pavucontrol"
@@ -118,14 +114,14 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
 
     "clock": {
         "interval": 60,
         "format": "{:%e %b %Y %H:%M}",
         "calendar-weeks-pos": "right",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "tooltip-format": "{calendar}",
     },
 }
 
