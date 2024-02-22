@@ -3,7 +3,7 @@
 [default.variables]
 email = "jeremy.damour2@gmail.com"
 install_pkgs = true
-font = "FiraCode Nerd Font Mono"
+font = "FiraCode Nerd Font"
 # default application
 browser = "firefox"
 file-manager = "pcmanfm"

@@ -15,6 +15,7 @@ local opt = vim.opt -- Set options (global/buffer/windows-scoped)
 opt.mouse = 'a'                               -- Enable mouse support
 opt.clipboard = 'unnamedplus'                 -- Copy/paste to system clipboard
 opt.completeopt = 'menuone,noinsert,noselect' -- Autocomplete options
+opt.encoding = 'UTF-8'                        -- UTF-8 encodin
 
 -----------------------------------------------------------
 -- Files

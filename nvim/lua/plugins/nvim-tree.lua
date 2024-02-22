@@ -2,7 +2,7 @@ return {
   'kyazdani42/nvim-tree.lua',
   lazy = false,
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
+    'ryanoasis/vim-devicons',
     lazy = true,
   },
   opts = {

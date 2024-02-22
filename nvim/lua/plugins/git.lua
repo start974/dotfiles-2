@@ -3,7 +3,10 @@ return {
   'tpope/vim-rhubarb',
   {
     'TimUntersberger/neogit',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      "sindrets/diffview.nvim",
+    },
   },
   {
     'lewis6991/gitsigns.nvim',

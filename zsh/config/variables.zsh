@@ -47,6 +47,8 @@ HIST_STAMPS="dd/mm/yyyy"
 # User configuration
 
 export MANPATH="/usr/local/man:$MANPATH"
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
