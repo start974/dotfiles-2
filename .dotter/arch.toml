@@ -36,8 +36,9 @@ sys_pkgs = [
     "pavucontrol",
     "pcmanfm",
 
-    # font
+    # font / themes
     "ttf-fira-code",
+    "starship",
 
     # lsp server
     "bash-language-server", # bash lsp

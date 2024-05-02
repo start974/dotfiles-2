@@ -7,6 +7,7 @@ packages = [
     "git",
     "kitty",
     "neovim",
+    "starship",
     "sway",
     "swaylock",
     "tmux",

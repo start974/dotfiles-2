@@ -36,8 +36,9 @@ sys_pkgs = [
     "pavucontrol",
     "pcmanfm",
 
-    ## font
+    ## themes / font
     "fira-code-fonts",
+    "starship", #dnf copr enable atim/starship
 
     ## lsp server
     #"universal-ctags", # tags in vim
@@ -45,3 +46,4 @@ sys_pkgs = [
 
 sys_install = "sudo dnf install"
 sys_update = "sudo dnf update"
+

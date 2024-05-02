@@ -120,6 +120,10 @@ name = "jeremy.damour"
 [neovim.files]
 nvim = "~/.config/nvim"
 
+#starship
+[starship.files]
+"starship.toml" = "~/.config/starship.toml"
+
 #sway
 [sway.files]
 "sway" = "~/.config/sway/"

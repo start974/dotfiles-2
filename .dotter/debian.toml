@@ -36,8 +36,9 @@ sys_pkgs = [
     "pavucontrol",
     "pcmanfm",
 
-    ## font
+    ## font / themes
     "fonts-firacode",
+    "starship",
 
     ## lsp server
     "universal-ctags", # tags in vim
