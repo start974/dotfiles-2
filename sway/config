@@ -1,11 +1,12 @@
 ## default sway config
 #include /etc/sway/config
 
-# system config
-#include /etc/sway/config.d/*
-
 ## my user config
 include ~/.config/sway/config.d/*.conf
 
+# system config
+include /etc/sway/config.d/*
+
 # only enable this if every app you use is compatible with wayland
 # xwayland disable
+
