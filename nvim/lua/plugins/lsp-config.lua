@@ -91,6 +91,12 @@ return {
           },
         },
       },
+      window = {
+        border = 'rounded',
+      },
+      completion = {
+        border = 'rounded',
+      },
     }
 
     vim.diagnostic.config {

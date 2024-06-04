@@ -50,7 +50,15 @@ return {
     },
   },
   keys = {
-    { '<C-n>',     ':NvimTreeToggle<CR>',  desc = 'open/close Tree' },
-    { '<leader>f', ':NvimTreeRefresh<CR>', desc = 'Reflesh Tree' },
+    {
+      '<C-n>',
+      ':NvimTreeToggle<CR>',
+      desc = 'open/close Tree',
+    },
+    {
+      '<leader>f',
+      ':NvimTreeRefresh<CR>',
+      desc = 'Reflesh Tree',
+    },
   },
 }
