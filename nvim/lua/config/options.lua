@@ -26,12 +26,20 @@ opt.undodir = os.getenv 'HOME' .. '/.vim/undodir' -- setup undo files
 opt.undofile = true                               -- undo file active
 
 -----------------------------------------------------------
+-- Folding
+-----------------------------------------------------------
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+-----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true          -- Show line number
 opt.relativenumber = false -- relative number
 opt.showmatch = true       -- Highlight matching parenthesis
-opt.foldmethod = 'marker'  -- Enable folding (default 'foldmarker')
 opt.colorcolumn = '80'     -- Line lenght marker at 80 columns
 
 opt.splitright = true      -- Vertical split to the right
@@ -57,9 +65,9 @@ opt.lcs = {
 -----------------------------------------------------------
 -- Search
 -----------------------------------------------------------
-opt.hlsearch = true   -- keep highlight search
-opt.ignorecase = true -- Ignore case letters when search
-opt.smartcase = true  -- Ignore lowercase for the whole pattern
+opt.hlsearch = true     -- keep highlight search
+opt.ignorecase = false  -- Ignore case letters when search
+opt.smartcase = true    -- Ignore lowercase for the whole pattern
 
 -----------------------------------------------------------
 -- Tabs, indent
