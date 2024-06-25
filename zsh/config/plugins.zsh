@@ -16,6 +16,7 @@ plugins=(
     git
     gitignore
     nix-zsh-completions
+    nix-shell
     #python
     zsh-autosuggestions
     zsh-syntax-highlighting

@@ -66,5 +66,13 @@ return {
       end,
       desc = '[S]earch [D]iagnostics',
     },
+    -- keys
+    {
+      '<leader>sk',
+      function()
+        require('telescope.builtin').keymaps()
+      end,
+      desc = '[S]earch [D]keys',
+    },
   },
 }

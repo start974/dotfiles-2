@@ -4,14 +4,23 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
 
+    'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
     'hrsh7th/cmp-buffer', -- cmp use buffer
     'hrsh7th/cmp-path', -- cmp use path
     'hrsh7th/cmp-cmdline', -- command line
-    'hrsh7th/nvim-cmp',
-    'L3MON4D3/LuaSnip',
+    {
+      'zbirenbaum/copilot-cmp', -- gh copilot
+      event = { 'InsertEnter', 'LspAttach' },
+      fix_pairs = true,
+      config = function()
+        require('copilot_cmp').setup()
+      end,
+    },
     'saadparwaiz1/cmp_luasnip', -- snippets
     'hrsh7th/cmp-calc',
+
+    'L3MON4D3/LuaSnip',
     'onsails/lspkind.nvim',
 
     'j-hui/fidget.nvim',
@@ -76,6 +85,7 @@ return {
         { name = 'luasnip' },
         { name = 'nvim_lua' },
         { name = 'nvim_lsp' },
+        { name = 'copilot', group_index = 2 },
       },
       formatting = {
         format = lspkind.cmp_format {
@@ -88,6 +98,7 @@ return {
             luasnip = '[LuaSnip]',
             nvim_lua = '[Lua]',
             nvim_lsp = '[LSP]',
+            copilot = '[Copilot]',
           },
         },
       },
@@ -96,6 +107,24 @@ return {
       },
       completion = {
         border = 'rounded',
+      },
+      sorting = {
+        priority_weight = 2,
+        comparators = {
+          require('copilot_cmp.comparators').prioritize,
+
+          -- Below is the default comparitor list and order for nvim-cmp
+          cmp.config.compare.offset,
+          -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+          cmp.config.compare.exact,
+          cmp.config.compare.score,
+          cmp.config.compare.recently_used,
+          cmp.config.compare.locality,
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+        },
       },
     }
 
@@ -106,8 +135,6 @@ return {
         style = 'minimal',
         border = 'rounded',
         source = 'always',
-        header = '',
-        prefix = '',
       },
     }
   end,

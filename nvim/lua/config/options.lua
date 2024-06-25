@@ -73,9 +73,9 @@ opt.smartcase = true    -- Ignore lowercase for the whole pattern
 -- Tabs, indent
 -----------------------------------------------------------
 opt.expandtab = true   -- Use spaces instead of tabs
-opt.shiftwidth = 4     -- Shift 4 spaces when tab
-opt.tabstop = 4        -- 1 tab == 4 spaces
-opt.softtabstop = 4    -- shift on edit mod
+opt.shiftwidth = 2     -- Shift 2 spaces when tab
+opt.tabstop = 2        -- 1 tab == 2 spaces
+opt.softtabstop = 2    -- shift on edit mod
 opt.smartindent = true -- Autoindent new lines
 
 -----------------------------------------------------------
