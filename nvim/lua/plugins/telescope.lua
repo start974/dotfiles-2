@@ -75,4 +75,7 @@ return {
       desc = '[S]earch [D]keys',
     },
   },
+  cond = function()
+    return not vim.g.vscode
+  end,
 }

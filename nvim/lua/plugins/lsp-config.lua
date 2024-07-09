@@ -3,6 +3,22 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    {
+      'jay-babu/mason-null-ls.nvim', -- formatter and linter
+      event = { 'BufReadPre', 'BufNewFile' },
+      dependencies = { 'mason.nvim', 'jose-elias-alvarez/null-ls.nvim' },
+      config = function()
+        local nls = require 'null-ls'
+        nls.setup {
+          root_dir = require('null-ls.utils').root_pattern('.null-ls-root', 'Makefile', '.git'),
+          sources = {
+            nls.builtins.formatting.stylua,
+            nls.builtins.formatting.shfmt,
+            nls.builtins.diagnostics.flake8,
+          },
+        }
+      end,
+    },
 
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
@@ -37,7 +53,6 @@ return {
     require('mason-lspconfig').setup {
       ensure_installed = {
         'lua_ls',
-        'rust_analyzer',
       },
       handlers = {
         function(server_name) -- default handler (optional)
@@ -45,7 +60,6 @@ return {
             capabilities = capabilities,
           }
         end,
-
         ['lua_ls'] = function()
           local lspconfig = require 'lspconfig'
           lspconfig.lua_ls.setup {
@@ -129,7 +143,7 @@ return {
     }
 
     vim.diagnostic.config {
-      -- update_in_insert = true,
+      update_in_insert = false,
       float = {
         focusable = false,
         style = 'minimal',
