@@ -2,46 +2,32 @@ return {
   {
     'L3MON4D3/LuaSnip',
     -- follow latest release.
-    version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    version = 'CurrentMajor',
     dependencies = { 'rafamadriz/friendly-snippets' },
+    config = function()
+      require('luasnip.loaders.from_snipmate').lazy_load() -- Lazy loading
+    end,
     keys = {
       {
-        '<C-K>',
-        function()
-          require('luasnip').expand()
-        end,
-        mode = 'i',
-        desc = "Expand snippets"
-      },
-      {
-        '<C-L>',
+        '<C-J>',
         function()
           require('luasnip').jump(1)
         end,
         mode = { 'i', 's' },
-        desc = "Next snippets"
+        desc = 'Next snippets',
+        noremap = true,
+        silent = true,
       },
-
       {
-        '<C-J>',
+        '<C-K>',
         function()
           require('luasnip').jump(-1)
         end,
         mode = { 'i', 's' },
-        desc = "Previous snippets"
+        desc = 'Previous snippets',
+        noremap = true,
+        silent = true,
       },
-
-      {
-        '<C-E>',
-        function()
-          local ls = require 'luasnip'
-          if ls.choice_active() then
-            ls.change_choice(1)
-          end
-        end,
-        mode = { 'i', 's' },
-        desc = "Changing active choise snippets"
-      },
-    }
+    },
   },
 }

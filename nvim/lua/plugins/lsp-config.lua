@@ -41,7 +41,8 @@ return {
 
     'j-hui/fidget.nvim',
   },
-
+  event = { 'BufReadPost', 'BufNewFile' },
+  cmd = { 'LspStart', 'LspRestart', 'LspStop', 'LspInfo', 'LspInstall', 'LspUninstall' },
   config = function()
     local cmp = require 'cmp'
     local cmp_lsp = require 'cmp_nvim_lsp'

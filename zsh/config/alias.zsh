@@ -84,6 +84,7 @@ alias upgrade='topgrade'
 # clipboard alias
 alias wgetclip='wget $(wl-paste)'
 alias gcloneclip='git clone $(wl-paste)'
+alias gchclip='git checkout $(wl-paste)'
 
 # alias pipe
 alias -g G='| grep'
