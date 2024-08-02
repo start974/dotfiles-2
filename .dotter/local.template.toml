@@ -10,6 +10,7 @@ packages = [
     "starship",
     "sway",
     "swaylock",
+    "swaync",
     "tmux",
     "vscode",
     "waybar",

@@ -131,6 +131,10 @@ nvim = "~/.config/nvim"
 [swaylock.files]
 "swaylock.conf" = "~/.config/swaylock/config"
 
+#swaync
+[swaync.files]
+"swaync.json" = "~/.config/swaync/config.json"
+
 #waybar (sway bar)
 [waybar.files]
 "waybar" = { target = "~/.config/waybar/", type = "symbolic" }
