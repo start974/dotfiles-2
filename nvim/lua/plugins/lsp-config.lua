@@ -21,10 +21,13 @@ return {
     },
 
     'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
-    'hrsh7th/cmp-buffer', -- cmp use buffer
-    'hrsh7th/cmp-path', -- cmp use path
-    'hrsh7th/cmp-cmdline', -- command line
+    'hrsh7th/cmp-nvim-lsp',       -- LSP source for nvim-cmp
+    'hrsh7th/cmp-buffer',         -- cmp use buffer
+    'hrsh7th/cmp-path',           -- cmp use path
+    'hrsh7th/cmp-cmdline',        -- cmp command line
+    'delphinus/cmp-ctags',        -- cmp use ctags
+    'kdheepak/cmp-latex-symbols', -- latex symbols
+
     {
       'zbirenbaum/copilot-cmp', -- gh copilot
       event = { 'InsertEnter', 'LspAttach' },
@@ -47,7 +50,8 @@ return {
     local cmp = require 'cmp'
     local cmp_lsp = require 'cmp_nvim_lsp'
     local lspkind = require 'lspkind'
-    local capabilities = vim.tbl_deep_extend('force', {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
+    local capabilities = vim.tbl_deep_extend('force', {}, vim.lsp.protocol.make_client_capabilities(),
+      cmp_lsp.default_capabilities())
 
     require('fidget').setup {}
     require('mason').setup()
@@ -93,14 +97,20 @@ return {
         ['<C-Space>'] = cmp.mapping.complete(),
       },
       sources = cmp.config.sources {
-        { name = 'buffer', keyword_length = 3 },
+        { name = 'buffer',     keyword_length = 3 },
         { name = 'calc' },
         { name = 'ctags' },
+        { name = 'greek' },
         { name = 'fuzzy_path', keyword_length = 2 },
         { name = 'luasnip' },
         { name = 'nvim_lua' },
         { name = 'nvim_lsp' },
-        { name = 'copilot', group_index = 2 },
+        { name = 'copilot',    group_index = 2 },
+        { name = 'latex_symbols',
+          option = {
+            strategy = 0, -- mixed
+            },
+        },
       },
       formatting = {
         format = lspkind.cmp_format {
