@@ -118,7 +118,7 @@ name = "jeremy.damour"
 
 #neovim (editor)
 [neovim.files]
-nvim = "~/.config/nvim"
+nvim = { target = "~/.config/nvim/", type = "symbolic" }
 
 #starship
 [starship.files]
