@@ -1,6 +1,6 @@
 return {
   'whonore/Coqtail',
-  lazy = false,
+  ft = 'coq',
   init = function()
     vim.cmd [[
         g:coqtail_dune_compile_deps = 1
