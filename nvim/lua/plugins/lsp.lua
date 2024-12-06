@@ -2,6 +2,7 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+    'jubnzv/virtual-types.nvim', -- virtual type for ocaml
     'mason.nvim',
     { 'williamboman/mason-lspconfig.nvim', config = function() end },
   },
@@ -92,8 +93,10 @@ return {
     }
 
     -- ocaml
+    -- (TODO: try early bird dap)
     lsp.ocamllsp.setup {
       capabilities = capabilities,
+      on_attach = require('virtualtypes').on_attach,
     }
   end,
 }

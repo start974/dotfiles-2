@@ -34,7 +34,9 @@ eval "$(direnv hook zsh)"
 
 {{#if (is_executable "opam")}}
 # source opam
-eval "$(opam env)"
+[[ ! -r '$HOME/.opam/opam-init/init.zsh' ]] || \
+  source '$HOME/.opam/opam-init/init.zsh' > \
+  /dev/null 2> /dev/null
 {{/if}}
 
 {{#if (is_executable "zoxide")}}

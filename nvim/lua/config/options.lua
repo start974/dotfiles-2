@@ -57,7 +57,7 @@ opt.list = true            -- display list char
 opt.lcs = {
   eol = '↴',
   --space = '⋅',
-  tab = '>--',
+  tab = '>-',
   extends = '◀',
   precedes = '▶',
 }
@@ -74,7 +74,7 @@ opt.smartcase = true    -- Ignore lowercase for the whole pattern
 -----------------------------------------------------------
 opt.expandtab = true   -- Use spaces instead of tabs
 opt.shiftwidth = 2     -- Shift 2 spaces when tab
-opt.tabstop = 2        -- 1 tab == 2 spaces
+opt.tabstop = 4        -- 1 tab == 2 spaces
 opt.softtabstop = 2    -- shift on edit mod
 opt.smartindent = true -- Autoindent new lines
 

@@ -82,6 +82,7 @@ addPath "{{script_dir}}"
 
 # to append path
 addPath "$HOME/.local/bin"
+addPath "$HOME/bin"
 
 {{#if (is_executable "cargo")}}
 # cargo

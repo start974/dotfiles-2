@@ -1,11 +1,11 @@
 return {
   'whonore/Coqtail',
   ft = 'coq',
-  init = function()
-    vim.cmd [[
-        g:coqtail_dune_compile_deps = 1
-    ]]
-  end,
+  --init = function()
+    --vim.cmd [[
+        --g:coqtail_dune_compile_deps = 0
+    --]]
+  --end,
   keys = {
     {
       '<leader>cR',

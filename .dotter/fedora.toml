@@ -29,6 +29,7 @@ sys_pkgs = [
     "opam",
     "perl",
     "ruby",
+    "ruby-devel",
     #"rustup",
     "python3-pip",
 

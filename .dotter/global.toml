@@ -102,6 +102,10 @@ depends = ["colors"]
 [kitty.files]
 "kitty.conf" = "~/.config/kitty/kitty.conf"
 
+# gdb
+[gdb.files]
+gdbinit = "~/.gdbinit"
+
 #git
 [git]
 depends = ["shell", "default"]
