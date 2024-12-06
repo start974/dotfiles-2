@@ -17,6 +17,7 @@
     "bluetooth",
     "pulseaudio",
     "backlight",
+    "custom/wlsunset",
     "clock",
     "custom/notification",
   ],
@@ -162,5 +163,16 @@
     "format": "{:%e %b %Y %H:%M}",
     "calendar-weeks-pos": "right",
     "tooltip-format": "{calendar}"
+  },
+  "custom/wlsunset": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/wlsunset_control.sh get",
+    "tooltip": true,
+    "tooltip-format": "Temperature: {}",
+    "exec-tooltip": "$HOME/.config/waybar/wlsunset_control.sh get-tooltip",
+    "interval": 2,
+    "on-click": "$HOME/.config/waybar/wlsunset_control.sh toggle",
+    "on-scroll-up": "$HOME/.config/waybar/wlsunset_control.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/wlsunset_control.sh down"
   }
 }

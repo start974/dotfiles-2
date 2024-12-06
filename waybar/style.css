@@ -1,7 +1,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Fira Code Nerd Font;
+  font-family: "Fira Code Nerd Font", monospace;
   font-size: 14px;
   min-height: 24px;
 }
@@ -83,6 +83,7 @@ window#waybar.PCSX2 #window {
 #pulseaudio,
 #bluetooth,
 #network,
+#custom-wlsunset,
 #backlight {
   margin-top: 8px;
   margin-left: 8px;
