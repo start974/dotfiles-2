@@ -1,6 +1,7 @@
 return {
   'mrcjkb/rustaceanvim',
   version = '^5', -- Recommended
+  lazy = false,
   dependencies = {
     'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
   },

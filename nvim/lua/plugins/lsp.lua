@@ -88,9 +88,9 @@ return {
     }
 
     -- coq
-    lsp.coq_lsp.setup {
-      capabilities = capabilities,
-    }
+    --lsp.coq_lsp.setup {
+      --capabilities = capabilities,
+    --}
 
     -- ocaml
     -- (TODO: try early bird dap)
