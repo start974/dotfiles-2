@@ -32,8 +32,12 @@ return {
         end,
       },
       window = {
+        border = "rounded",
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
+      },
+      completion = {
+        border = "rounded",
       },
       mapping = cmp.mapping.preset.insert {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),

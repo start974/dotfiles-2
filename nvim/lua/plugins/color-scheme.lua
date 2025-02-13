@@ -21,6 +21,12 @@ return {
       comments = { italic = true },
     },
     markdown_header_marks = true, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
+    on_highlights = function(highlights, colors)
+      -- You could add styles like bold, underline, italic
+      highlights.TelescopeSelection = { bold = true }
+      highlights.TelescopeBorder = { fg = colors.grey }
+      highlights["@lsp.type.property.lua"] = { fg = colors.fg }
+    end,
   },
   config = function(_, opts)
     -- Highlight line at the cursor position

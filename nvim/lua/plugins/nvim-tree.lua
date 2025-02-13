@@ -55,10 +55,10 @@ return {
       ':NvimTreeToggle<CR>',
       desc = 'open/close Tree',
     },
-    {
-      '<leader>f',
-      ':NvimTreeRefresh<CR>',
-      desc = 'Reflesh Tree',
-    },
+    --[[    {]]
+    --[['<leader>f',]]
+    --[[':NvimTreeRefresh<CR>',]]
+    --[[desc = 'Reflesh Tree',]]
+    --[[},]]
   },
 }
