@@ -120,6 +120,10 @@ name = "jeremy.damour"
 [glow.files]
 "glow.yml" = "~/.config/glow/glow.ml"
 
+# kanshi (screen manager)
+[kanshi.files]
+kanshi = "~/.config/kanshi/"
+
 #neovim (editor)
 [neovim.files]
 nvim = { target = "~/.config/nvim/", type = "symbolic" }

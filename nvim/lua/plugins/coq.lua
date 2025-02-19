@@ -31,15 +31,12 @@ return {
       local vscoq = require 'vscoq'
       vscoq.setup {
         vscoq = {
-          goals = {
-            display = 'Tabs',
-          },
           proof = {
             mode = 'Continuous', -- Manual, Continuous
             --pointInterpretationMode = 'Cursor', -- NextCommand, Cursor
-            --cursor = {
-              --sticky = false,
-            --},
+            cursor = {
+              sticky = false,
+            },
             diagnostics = true,
             workers = 2,
           },

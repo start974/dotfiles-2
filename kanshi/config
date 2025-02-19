@@ -1,0 +1,55 @@
+# Note: to make this file is use `swaymsg -t get_outputs`
+# to get modes and positions, and `wdisplay` to place screens
+# you can use wl-mirros (use full for presentation)
+
+profile default {
+  output eDP-1 {
+    mode 1920x1200@60
+    position 3595,3478
+  }
+}
+
+profile work {
+  output eDP-1 {
+    mode 1920x1200@60
+    position 3595,3478
+  }
+
+  output DP-8 {
+    mode 1920x1200@60
+    position 5515,2399
+  }
+
+  output DP-9 {
+    mode 3840x2160@60
+    position 7435,2002
+  }
+
+  exec swaymsg workspace 1, move workspace to output eDP-1
+  exec swaymsg workspace 2, move workspace to output DP-8
+  exec swaymsg workspace 3, move workspace to output DP-9
+}
+
+profile home {
+  output eDP-1 {
+    mode 1920x1200@60.000Hz
+    scale 1
+    position 2164,2160
+  }
+
+  output DP-6 {
+    mode 1920x1080@60.000Hz
+    scale 1
+    position 2699,1080
+  }
+
+  output DP-7 {
+    mode 3840x2160@59.996Hz
+    scale 1
+    position 4619,0
+  }
+
+  exec swaymsg workspace 1, move workspace to output eDP-1
+  exec swaymsg workspace 2, move workspace to output DP-6
+  exec swaymsg workspace 3, move workspace to output DP-7
+}
