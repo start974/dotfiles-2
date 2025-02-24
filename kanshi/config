@@ -3,53 +3,50 @@
 # you can use wl-mirros (use full for presentation)
 
 profile default {
-  output 'AU Optronics 0xF99A Unknown' {
+  output {{laptop}} {
     mode 1920x1200
     position 3595,3478
   }
 }
 
 profile work {
-  output 'AU Optronics 0xF99A Unknown' {
+  output {{laptop}} {
     mode 1920x1200
     position 3595,3478
   }
 
-  output 'Dell Inc. DELL U2412M 0FFXD31U5FEL' {
+  output {{work_left}} {
     mode 1920x1200
     position 5515,2399
   }
 
-  output 'Dell Inc. DELL P2723QE 58D3914' {
+  output {{work_right}} {
     mode 3840x2160@60
     position 7435,2002
   }
 
-  exec swaymsg workspace 1, move workspace to output eDP-1
-  exec swaymsg workspace 2, move workspace to output DP-8
-  exec swaymsg workspace 3, move workspace to output DP-9
+  exec swaymsg workspace 1, move workspace to output '{{laptop}}'
+  exec swaymsg workspace 2, move workspace to output '{{work_left}}'
+  exec swaymsg workspace 3, move workspace to output '{{work_right}}'
 }
 
 profile home {
-  output 'AU Optronics 0xF99A Unknown' {
+  output {{laptop}} {
     mode 1920x1200
-    scale 1
     position 2164,2160
   }
 
-  output DP-6 {
-    mode 1920x1080
-    scale 1
+  output {{home_left}} {
+    mode 1920x1080@60.000Hz
     position 2699,1080
   }
 
-  output DP-7 {
-    mode 3840x2160
-    scale 1
+  output {{home_right}} {
+    mode 3840x2160@59.996Hz
     position 4619,0
   }
 
-  exec swaymsg workspace 1, move workspace to output eDP-1
-  exec swaymsg workspace 2, move workspace to output DP-6
-  exec swaymsg workspace 3, move workspace to output DP-7
+  exec swaymsg workspace 1, move workspace to output '{{laptop}}'
+  exec swaymsg workspace 2, move workspace to output '{{home_left}}'
+  exec swaymsg workspace 3, move workspace to output '{{home_right}}'
 }

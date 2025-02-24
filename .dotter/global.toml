@@ -81,6 +81,13 @@ color15 = "ffffff"
 cursor = "7a5Eae"
 cursor_text_color = "e0bef3"
 
+[monitors.variables]
+laptop = "\"AU Optronics 0xF99A Unknown\""
+work_left = "\"Dell Inc. DELL U2412M 0FFXD31U5FEL\""
+work_right = "\"Dell Inc. DELL P2723QE 58D3914\""
+home_left = "\"Iiyama North America PL2792H 1172001801603\""
+home_right = "\"Unknown Unknown Unknown\""
+
 [shell.variables]
 editor = "nvim"
 
@@ -121,6 +128,9 @@ name = "jeremy.damour"
 "glow.yml" = "~/.config/glow/glow.ml"
 
 # kanshi (screen manager)
+[kanshi]
+depends = ["monitors"]
+
 [kanshi.files]
 kanshi = "~/.config/kanshi/"
 
