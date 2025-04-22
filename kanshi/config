@@ -33,17 +33,19 @@ profile work {
 profile home {
   output {{laptop}} {
     mode 1920x1200
-    position 2164,2160
+    position 1954,1971
   }
 
   output {{home_left}} {
     mode 1920x1080@60.000Hz
-    position 2699,1080
+    position 3874,1034
+    transform 90
+    scale 0.8
   }
 
   output {{home_right}} {
     mode 3840x2160@59.996Hz
-    position 4619,0
+    position 5229,1184
   }
 
   exec swaymsg workspace 1, move workspace to output '{{laptop}}'

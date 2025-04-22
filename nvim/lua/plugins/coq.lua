@@ -35,7 +35,7 @@ return {
             mode = 'Continuous', -- Manual, Continuous
             --pointInterpretationMode = 'Cursor', -- NextCommand, Cursor
             cursor = {
-              sticky = false,
+              sticky = true,
             },
             diagnostics = true,
             workers = 2,
