@@ -22,15 +22,31 @@ return {
       })
     end
 
-    sign { name = 'DiagnosticSignError', text = '✘' }
-    sign { name = 'DiagnosticSignWarn', text = '▲' }
-    sign { name = 'DiagnosticSignHint', text = '⚑' }
-    sign { name = 'DiagnosticSignInfo', text = '' }
-
     -- diagnostic
     vim.diagnostic.config {
       virtual_text = false,
       severity_sort = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = ' ',
+          [vim.diagnostic.severity.WARN] = ' ',
+          [vim.diagnostic.severity.INFO] = '󰋼 ',
+          [vim.diagnostic.severity.HINT] = '󰌵 ',
+        },
+        texthl = {
+          [vim.diagnostic.severity.ERROR] = 'Error',
+          [vim.diagnostic.severity.WARN] = 'Error',
+          [vim.diagnostic.severity.HINT] = 'Hint',
+          [vim.diagnostic.severity.INFO] = 'Info',
+        },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = '',
+          [vim.diagnostic.severity.WARN] = '',
+          [vim.diagnostic.severity.HINT] = '',
+          [vim.diagnostic.severity.INFO] = '',
+        },
+      },
+
       float = {
         border = 'rounded',
         -- source = 'always',
