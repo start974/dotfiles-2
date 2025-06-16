@@ -99,3 +99,6 @@ addPath "$HOME/.cargo/bin/"
 addPath "/snap/bin/"
 {{/if}}
 
+{{#if openai_api_key}}
+export OPENAI_API_KEY="{{openai_api_key}}"
+{{/if}}
