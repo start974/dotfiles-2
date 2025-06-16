@@ -36,7 +36,7 @@ sys_pkgs = [
 
     ## system
     "pavucontrol",
-    "dolphin",
+    "nemo",
 
     ## themes / font
     "fira-code-fonts",

@@ -6,7 +6,7 @@ install_pkgs = true
 font = "FiraCode Nerd Font"
 # default application
 browser = "firefox"
-file-manager = "dolphin"
+file-manager = "nemo"
 pdf-reader = "evince"
 terminal = "kitty"
 

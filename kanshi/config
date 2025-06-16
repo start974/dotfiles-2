@@ -1,6 +1,6 @@
 # Note: to make this file is use `swaymsg -t get_outputs`
 # to get modes and positions, and `wdisplay` to place screens
-# you can use wl-mirros (use full for presentation)
+# you can use wl-mirros (usefull for presentation)
 
 profile default {
   output {{laptop}} {

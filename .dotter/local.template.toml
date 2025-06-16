@@ -21,3 +21,4 @@ packages = [
 [variables]
 install_pkgs = false
 update_pkgs = false
+#opt_ai = "<<key>>"
