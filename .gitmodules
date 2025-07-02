@@ -19,3 +19,6 @@
 [submodule "zsh/themes/powerlevel10k"]
 	path = zsh/themes/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
+[submodule "nvim/pack/nvim/start/nvim-lspconfig"]
+	path = nvim/pack/nvim/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig

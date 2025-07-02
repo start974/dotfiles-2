@@ -24,8 +24,8 @@ return {
     dir = '~/Project/vscoq.nvim',
     filetypes = 'coq',
     dependecies = {
-      'neovim/nvim-lspconfig',
       'whonore/Coqtail',
+      'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
     },
     config = function()
       local vscoq = require 'vscoq'
@@ -41,6 +41,7 @@ return {
             workers = 2,
           },
         },
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
         lsp = {
           trace = 'message',
           on_attach = function(client, bufnr)
@@ -91,7 +92,6 @@ return {
             vim.keymap.set({ 'v' }, '<leader>cs', function()
               vscoq_client:search(get_visual_selection())
             end, { buffer = bufnr, desc = 'VsCoq search' })
-
           end,
         },
       }

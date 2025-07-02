@@ -10,6 +10,15 @@ return {
     'hrsh7th/cmp-calc', -- make calulus
     'delphinus/cmp-ctags', -- cmp use ctags
     'kdheepak/cmp-latex-symbols', -- latex symbols
+    {
+      'L3MON4D3/LuaSnip',
+      version = 'v2.*',
+      build = 'make install_jsregexp',
+      config = function()
+        require('luasnip.loaders.from_snipmate').lazy_load { paths = { '~/.config/nvim/snippets' } }
+      end,
+    },
+    'saadparwaiz1/cmp_luasnip', -- cmp use luasnip
 
     {
       'zbirenbaum/copilot-cmp', -- gh copilot
@@ -28,16 +37,16 @@ return {
     cmp.setup {
       snippet = {
         expand = function(args)
-          require 'snippy'.expand_snippet(args.body)
+          require('luasnip').lsp_expand(args.body)
         end,
       },
       window = {
-        border = "rounded",
+        border = 'rounded',
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
       completion = {
-        border = "rounded",
+        border = 'rounded',
       },
       mapping = cmp.mapping.preset.insert {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -45,21 +54,19 @@ return {
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
       },
-      sources = cmp.config.sources({
+      sources = cmp.config.sources {
         { name = 'calc' },
-        { name = 'copilot', group_index = 2 },
+        { name = 'copilot', group_index = 3 },
         { name = 'ctags' },
         { name = 'fuzzy_path', keyword_length = 2 },
         { name = 'git' },
         { name = 'greek' },
-        { name = 'latex_symbols', option = { strategy = 0,},
+        { name = 'latex_symbols', option = { strategy = 0 } },
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
-        { name = 'snippy' }
-        },
-      }, {
+        { name = 'luasnip' },
         { name = 'buffer' },
-      }),
+      },
     }
     -- Set configuration for specific filetype.
     cmp.setup.filetype('gitcommit', {
@@ -88,5 +95,8 @@ return {
       }),
       matching = { disallow_symbol_nonprefix_matching = false },
     })
+
+    -- Set up lspconfig.
+    vim.lsp.config('*', { capabilities = require('cmp_nvim_lsp').default_capabilities() })
   end,
 }

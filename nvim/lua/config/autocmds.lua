@@ -7,7 +7,7 @@
 
 local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
-local opt = vim.o                           -- Set options (global/buffer/windows-scoped)
+local opt = vim.o -- Set options (global/buffer/windows-scoped)
 -- General settings:
 --------------------
 
