@@ -25,16 +25,13 @@ require('lazy').setup {
     lazy = false,
     -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
     -- have outdated releases, which may break your Neovim install.
-    version = false, -- always use the latest git commit
-    -- version = "*", -- try installing the latest stable version for plugins that support semver
+    version = '*', -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { 'monokai-nightasty' } },
   checker = {
     -- automatically check for plugin updates
     enabled = false,
-    concurrency = nil, ---@type number? set to 1 to check for updates very slowly
     notify = true, -- get a notification when new updates are found
-    frequency = 3600 * 12, -- check for updates every hour
   },
   performance = {
     rtp = {

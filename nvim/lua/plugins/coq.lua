@@ -25,7 +25,6 @@ return {
     filetypes = 'coq',
     dependecies = {
       'whonore/Coqtail',
-      'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
     },
     config = function()
       local vscoq = require 'vscoq'
@@ -41,7 +40,6 @@ return {
             workers = 2,
           },
         },
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
         lsp = {
           trace = 'message',
           on_attach = function(client, bufnr)
