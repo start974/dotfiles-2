@@ -30,13 +30,23 @@ vim.diagnostic.config {
 }
 
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
-  group = vim.api.nvim_create_augroup('LSPCodeLens', { clear = true }),
+  group = vim.api.nvim_create_augroup('lsp', { clear = true }),
   callback = function()
     vim.lsp.codelens.refresh()
   end,
 })
 
 -- Lua LSP configuration
+vim.lsp.config('*', {
+  capabilities = {
+    textDocument = {
+      semanticTokens = {
+        multilineTokenSupport = true,
+      },
+    },
+  },
+  root_markers = { '.git' },
+})
 
 vim.lsp.config('lua_ls', {
   on_init = function(client)

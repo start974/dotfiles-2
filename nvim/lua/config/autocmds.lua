@@ -23,7 +23,12 @@ autocmd('TextYankPost', {
 -- Remove whitespace on save
 autocmd('BufWritePre', {
   pattern = '',
-  command = ':%s/\\s\\+$//e',
+  callback = function(args)
+    local ext = vim.fn.expand('%:e')
+    if ext ~= 'trycmd' then
+      vim.cmd([[%s/\s\+$//e]])
+    end
+  end,
 })
 
 -- Don't auto commenting new lines
