@@ -6,6 +6,7 @@ return {
   },
   event = 'VeryLazy',
   lazy = false,
+  cond = not vim.g.vscode,
   opts = {
     options = {
       numbers = 'none',

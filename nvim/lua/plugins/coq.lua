@@ -26,6 +26,7 @@ return {
     dependecies = {
       'whonore/Coqtail',
     },
+    cond = not vim.g.vscode,
     config = function()
       local vscoq = require 'vscoq'
       vscoq.setup {

@@ -34,7 +34,7 @@ return {
     },
 
     version = '1.*',
-
+    cond = not vim.g.vscode,
     opts = {
       -- active cmdline
       cmdline = { enabled = true },

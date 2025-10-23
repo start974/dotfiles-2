@@ -1,6 +1,7 @@
 return {
   "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
+    cond = not vim.g.vscode,
     config = function()
       require("chatgpt").setup()
     end,

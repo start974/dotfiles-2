@@ -7,6 +7,7 @@ return {
     -- require for dap ui
     'nvim-neotest/nvim-nio',
   },
+  cond = not vim.g.vscode,
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'

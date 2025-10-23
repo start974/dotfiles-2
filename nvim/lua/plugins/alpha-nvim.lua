@@ -20,6 +20,7 @@ local banner = {
 }
 return {
   'goolord/alpha-nvim',
+  cond = not vim.g.vscode,
   config = function()
     local alpha = require 'alpha'
 
