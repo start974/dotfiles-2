@@ -98,4 +98,4 @@ vim.lsp.config('lua_ls', {
 })
 
 -- Activ the LSP servers
-vim.lsp.enable { 'lua_ls', 'ocamllsp' }
+vim.lsp.enable { 'lua_ls', 'ocamllsp', 'pyright', 'texlab' }

@@ -23,10 +23,10 @@ return {
     cmd = { 'TSUpdateSync' },
     keys = {
       { '<c-space>', desc = 'Increment selection' },
-      { '<bs>',      desc = 'Decrement selection', mode = 'x' },
+      { '<bs>', desc = 'Decrement selection', mode = 'x' },
     },
     opts = {
-      highlight = { enable = true },
+      highlight = { enable = true, disable = { 'latex' } },
       indent = { enable = true },
       ensure_installed = {
         'bash',
