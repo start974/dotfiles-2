@@ -33,6 +33,10 @@ map('n', 'J', 'mzJ`z', { desc = 'move current line up with space' })
 -- paste without copy select
 map('x', '<leader>p', '"_dP', { desc = 'paste without copy select' })
 
+-- split
+map("n", '<C-w>-', ":split<CR>", {desc = 'horizontal split'})
+map("n", '<C-w>|', ":vsplit<CR>", {desc = 'vertical split'})
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------

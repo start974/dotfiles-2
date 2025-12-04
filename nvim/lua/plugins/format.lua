@@ -28,6 +28,7 @@ return {
       python = { 'isort', 'black' },
       rust = { 'rustfmt', lsp_format = 'fallback' },
       yaml = { 'prettier' },
+      tex = { 'tex-fmt' },
     },
   },
 }

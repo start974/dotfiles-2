@@ -169,6 +169,10 @@ tmux-power = "~/.tmux/plugins/tmux-power/tmux-power.tmux"
 [vscode.files]
 "vscode_settings.json" = "~/.config/VSCodium/User/settings.json"
 
+#zatura
+[zathura.files]
+"zathurarc" = "~/.config/zathura/zathurarc"
+
 #zsh
 [zsh]
 depends = ["shell"]
