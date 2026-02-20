@@ -23,7 +23,7 @@ autocmd('TextYankPost', {
 -- Remove whitespace on save
 autocmd('BufWritePre', {
   pattern = '',
-  callback = function(args)
+  callback = function(_args)
     local ext = vim.fn.expand('%:e')
     if ext ~= 'trycmd' then
       vim.cmd([[%s/\s\+$//e]])
@@ -61,28 +61,4 @@ autocmd('Filetype', {
   group = 'setIndent',
   pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'yaml', 'lua' },
   command = 'setlocal shiftwidth=2 tabstop=2',
-})
-
--- Terminal settings:
----------------------
-
--- Open a Terminal on the right tab
-autocmd('CmdlineEnter', {
-  command = 'command! Term :botright vsplit term://$SHELL',
-})
-
--- Enter insert mode when switching to terminal
-autocmd('TermOpen', {
-  command = 'setlocal listchars= nonumber norelativenumber nocursorline',
-})
-
-autocmd('TermOpen', {
-  pattern = '',
-  command = 'startinsert',
-})
-
--- Close terminal buffer on process exit
-autocmd('BufLeave', {
-  pattern = 'term://*',
-  command = 'stopinsert',
 })

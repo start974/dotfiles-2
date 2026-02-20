@@ -36,12 +36,3 @@ map('x', '<leader>p', '"_dP', { desc = 'paste without copy select' })
 -- split
 map("n", '<C-w>-', ":split<CR>", {desc = 'horizontal split'})
 map("n", '<C-w>|', ":vsplit<CR>", {desc = 'vertical split'})
-
------------------------------------------------------------
--- Applications and Plugins shortcuts
------------------------------------------------------------
-
--- Terminal
----------------------
-map('n', '<C-t>', ':Term<CR>', { noremap = true, desc = 'Open terminal' }) -- open
-map('t', '<Esc>', '<C-\\><C-n>') -- exit
