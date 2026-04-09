@@ -24,6 +24,7 @@ plugins=(
     ssh-agent
     aliases
     z
+    exercism
 )
 
 source $ZSH/oh-my-zsh.sh

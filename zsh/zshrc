@@ -39,8 +39,7 @@ eval "$(direnv hook zsh)"
 #   - auto-completion for the opam binary
 # This section can be safely removed at any time if needed.
 [[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || \
-  source "$HOME/.opam/opam-init/init.zsh" > \
-  /dev/null 2> /dev/null
+  source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null
 {{/if}}
 
 {{#if (is_executable "zoxide")}}
@@ -59,5 +58,13 @@ eval "$(starship init zsh)"
 {{/if}}
 
 {{#if (is_executable "fzf")}}
+# fzf
 source <(fzf --zsh)
+{{/if}}
+
+{{#if (is_executable "pack")}}
+#pack
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(pack completion-script pack)"
 {{/if}}
