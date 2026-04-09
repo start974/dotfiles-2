@@ -18,11 +18,13 @@ profile work {
   output {{work_left}} {
     mode 1920x1200
     position 5515,2399
+    transform 0
   }
 
   output {{work_right}} {
     mode 3840x2160@60
     position 7435,2002
+    transform 0
   }
 
   exec swaymsg workspace 1, move workspace to output '{{laptop}}'
