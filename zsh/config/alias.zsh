@@ -1,44 +1,65 @@
 #builtin replacemen
 {{#if (is_executable "bat")}}
+# view file
 alias cat='bat'
 {{/if}}
 
+{{#if (is_executable "kitten")}}
+# view image
+alias icat='kitten icat'
+alias -s img='icat'
+alias -s png='icat'
+alias -s jpg='icat'
+alias -s jpeg='icat'
+{{/if}}
+
 {{#if (is_executable "delta")}}
+# make diff
 alias diff='delta'
 {{/if}}
 
 {{#if (is_executable "dua")}}
+# estimate disk usage
 alias du='dua i'
 {{/if}}
 
 {{#if (is_executable "fd")}}
+#find file
 alias find='fd'
 {{/if}}
 
 {{#if (is_executable "rg")}}
+# grep
 alias grep='rg'
 {{/if}}
 
 {{#if (is_executable "trash-put")}}
+# no rm file put in trash
 alias rm='trash-put'
 {{/if}}
 
 {{#if (is_executable "btm")}}
+# view process
 alias top='btm'
 {{/if}}
 
 {{#if (is_executable "lsd")}}
+# list files
 alias ls='lsd'
 alias lt='lsd --tree'
 alias lr='lsd -tlR'
 {{/if}}
 
 {{#if (is_executable "zoxide")}}
+# go to files
 alias cd='z'
 alias cdi='zi'
 {{/if}}
 
+# make with all processor
 alias make='make -j`nproc`'
+
+# move and copy with confirmation
 alias mv='mv -i'
 alias cp='cp -i'
 
@@ -73,7 +94,7 @@ alias vi='nvim'
 alias e='{{editor}}'
 
 # go to config
-alias config='cd ~/dotfiles/ && {{editor}} . && dotter'
+alias config='cd ~/dotfiles/ && {{editor}} .'
 
 # update config
 alias conf-update='dotter -v && source ~/.config/zsh/.zshrc'

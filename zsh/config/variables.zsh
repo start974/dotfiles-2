@@ -102,8 +102,3 @@ addPath "/snap/bin/"
 {{#if openai_api_key}}
 export OPENAI_API_KEY="{{openai_api_key}}"
 {{/if}}
-
-{{#if (is_executable "pack")}}
-#pack
-  addPath "$HOME/.pack/bin:$PATH"
-{{/if}}

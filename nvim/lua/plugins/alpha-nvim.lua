@@ -32,9 +32,9 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button('e', '  New file', ':ene <BAR> startinsert<CR>'),
       dashboard.button('r', '  Recent', ':Telescope oldfiles<CR>'),
-      dashboard.button('f', '  Find file', ':NvimTreeOpen<CR>'),
+      dashboard.button('f', '  Find file', ':Telescope find_files<CR>'),
       dashboard.button('s', '  Settings', ':e $MYVIMRC<CR>'),
-      dashboard.button('u', '  Update plugins', ':PackerUpdate<CR>'),
+      dashboard.button('u', '  Update plugins', ':Lazy update<CR>'),
       dashboard.button('q', '  Quit', ':qa<CR>'),
     }
 
