@@ -29,6 +29,7 @@ return {
       rust = { 'rustfmt', lsp_format = 'fallback' },
       yaml = { 'prettier' },
       tex = { 'tex-fmt' },
+      nix = {'nixfmt'},
     },
   },
 }

@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
 vim.lsp.config('ltex', {
   settings = {
     ltex = {
-      language = 'fr',
+      language = 'en',
     },
   },
 })
