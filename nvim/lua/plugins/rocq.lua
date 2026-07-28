@@ -16,23 +16,23 @@ return {
     'whonore/Coqtail',
     init = function()
       vim.g.loaded_coqtail = 1
-      vim.g['coqtail#supported'] = 0
+      vim.g.coqtail_supported = 1
     end,
   },
   {
     'tomtomjhj/vsrocq.nvim',
-    --dir = '~/Project/vscoq.nvim',
+    ----dir = '~/Project/vscoq.nvim',
     filetypes = 'coq',
     dependecies = {
       'whonore/Coqtail',
     },
     cond = not vim.g.vscode,
     config = function()
-      local vscoq = require 'vsrocq'
-      vscoq.setup {
-        vscoq = {
+      local vsrocq = require 'vsrocq'
+      vsrocq.setup {
+        vsrocq = {
           proof = {
-            mode = 'Continuous', -- Manual, Continuous
+            mode = 'Manual', -- Manual, Continuous
             --pointInterpretationMode = 'Cursor', -- NextCommand, Cursor
             cursor = {
               sticky = true,
@@ -44,52 +44,52 @@ return {
         lsp = {
           trace = 'message',
           on_attach = function(client, bufnr)
-            local vscoq_client = vscoq.clients[client.id]
+            local vsrocq_client = vsrocq.clients[client.id]
             -- movement in normal mode
             vim.keymap.set({ 'n' }, '<leader>cj', function()
-              vscoq_client:stepForward()
+              vsrocq_client:stepForward()
             end, { buffer = bufnr, desc = 'VsRocq step forward' })
 
             vim.keymap.set({ 'n' }, '<leader>ck', function()
-              vscoq_client:stepBackward()
+              vsrocq_client:stepBackward()
             end, { buffer = bufnr, desc = 'VsRocq step backward' })
 
             vim.keymap.set({ 'n' }, '<leader>cl', function()
-              vscoq_client:interpretToPoint()
+              vsrocq_client:interpretToPoint()
             end, { buffer = bufnr, desc = 'VsRocq interpret to point' })
 
             vim.keymap.set({ 'n' }, '<leader>cG', function()
-              vscoq_client:interpretToEnd()
+              vsrocq_client:interpretToEnd()
             end, { buffer = bufnr, desc = 'VsRocq interpret to end' })
 
             -- reset coq
             vim.keymap.set({ 'n' }, '<leader>cR', function()
-              vscoq_client:resetRocq()
+              vsrocq_client:resetRocq()
             end, { buffer = bufnr, desc = 'VsRocq reset' })
 
             -- command about
             vim.keymap.set({ 'v' }, '<leader>ca', function()
-              vscoq_client:about(get_visual_selection())
+              vsrocq_client:about(get_visual_selection())
             end, { buffer = bufnr, desc = 'VsRocq about' })
 
             -- command check
             vim.keymap.set({ 'v' }, '<leader>ch', function()
-              vscoq_client:check(get_visual_selection())
+              vsrocq_client:check(get_visual_selection())
             end, { buffer = bufnr, desc = 'VsRocq check' })
 
             -- command print
             vim.keymap.set({ 'v' }, '<leader>cp', function()
-              vscoq_client:print(get_visual_selection())
+              vsrocq_client:print(get_visual_selection())
             end, { buffer = bufnr, desc = 'VsRocq print' })
 
             -- command locate
             vim.keymap.set({ 'v' }, '<leader>cf', function()
-              vscoq_client:locate(get_visual_selection())
+              vsrocq_client:locate(get_visual_selection())
             end, { buffer = bufnr, desc = 'VsRocq locate' })
 
             -- command search
             vim.keymap.set({ 'v' }, '<leader>cs', function()
-              vscoq_client:search(get_visual_selection())
+              vsrocq_client:search(get_visual_selection())
             end, { buffer = bufnr, desc = 'VsRocq search' })
           end,
         },

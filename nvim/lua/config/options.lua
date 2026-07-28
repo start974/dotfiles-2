@@ -10,6 +10,11 @@ local g = vim.g -- Global variables
 local opt = vim.opt -- Set options (global/buffer/windows-scoped)
 
 -----------------------------------------------------------
+-- Providers
+-----------------------------------------------------------
+g.loaded_perl_provider = 0 -- Disable Perl provider
+
+-----------------------------------------------------------
 -- General
 -----------------------------------------------------------
 opt.mouse = 'a' -- Enable mouse support
