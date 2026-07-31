@@ -43,7 +43,7 @@ profile home {
   }
 
   output {{home_right}} {
-    mode 3840x2160@59.996Hz
+    mode 3840x2160@60Hz
     position 4320,0
   }
 
