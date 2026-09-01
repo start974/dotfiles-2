@@ -95,6 +95,9 @@ editor = "nvim"
 [discord.files]
 "discord.json" = "~/.config/discord/settings.json"
 
+[dune.files]
+"dune" = "~/.config/dune/config"
+
 # foot (terminal)
 [foot]
 depends = ["colors"]

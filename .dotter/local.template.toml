@@ -4,6 +4,7 @@ includes = [".dotter/<system>.toml"]
 
 packages = [
     "discord",
+    "dune",
     "git",
     "kitty",
     "neovim",
