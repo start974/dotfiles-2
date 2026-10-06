@@ -11,6 +11,7 @@
 [core]
     editor = {{editor}}
     pager = delta
+    excludesfile = ~/.gitignore_global
 
 [delta]
     side-by-side = false

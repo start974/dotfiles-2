@@ -122,6 +122,7 @@ depends = ["shell", "default"]
 
 [git.files]
 gitconfig = "~/.gitconfig"
+gitignore_global = "~/.gitignore_global"
 
 [git.variables]
 name = "jeremy.damour"
