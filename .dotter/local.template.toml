@@ -3,6 +3,7 @@ includes = [".dotter/<system>.toml"]
 #[files]
 
 packages = [
+    "claude",
     "discord",
     "dune",
     "git",

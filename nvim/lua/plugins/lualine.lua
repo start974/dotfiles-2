@@ -32,15 +32,12 @@ local function claude_status()
   if type(ctx) == 'number' then
     table.insert(parts, ('ctx %d%%'):format(math.floor(ctx + 0.5)))
   end
-  -- Remaining usage: 5-hour window and week
+  -- Used usage (like /usage): 5-hour window and week
   for _, limit in ipairs { { 'five_hour', '5h' }, { 'seven_day', '7j' } } do
     local used =
       vim.tbl_get(claude.data, 'rate_limits', limit[1], 'used_percentage')
     if type(used) == 'number' then
-      table.insert(
-        parts,
-        ('%s %d%%'):format(limit[2], math.floor(100 - used + 0.5))
-      )
+      table.insert(parts, ('%s %d%%'):format(limit[2], math.floor(used + 0.5)))
     end
   end
   return table.concat(parts, ' ')

@@ -91,6 +91,12 @@ home_right = "\"GIGA-BYTE TECHNOLOGY CO., LTD. G27UP 012345678\""
 [shell.variables]
 editor = "nvim"
 
+# claude code
+[claude.files]
+"claude/settings.json" = { target = "~/.claude/settings.json", type = "symbolic" }
+"claude/CLAUDE.md" = { target = "~/.claude/CLAUDE.md", type = "symbolic" }
+"claude/statusline.sh" = { target = "~/.claude/statusline.sh", type = "symbolic" }
+
 # discord
 [discord.files]
 "discord.json" = "~/.config/discord/settings.json"
@@ -141,7 +147,6 @@ kanshi = "~/.config/kanshi/"
 #neovim (editor)
 [neovim.files]
 nvim = { target = "~/.config/nvim/", type = "symbolic" }
-"claude/statusline.sh" = "~/.claude/statusline.sh"
 
 #starship
 [starship.files]
