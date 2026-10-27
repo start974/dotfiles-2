@@ -5,16 +5,22 @@ return {
     lazy = true,
   },
   event = 'VeryLazy',
-  lazy = false,
   cond = not vim.g.vscode,
   opts = {
     options = {
       numbers = 'none',
+      -- Close buffers without messing up the window layout
+      close_command = function(n)
+        Snacks.bufdelete(n)
+      end,
+      right_mouse_command = function(n)
+        Snacks.bufdelete(n)
+      end,
       diagnostics = 'nvim_lsp',
       separator_style = 'slant', -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
       offsets = {
         {
-          filetype = 'NvimTree',
+          filetype = 'snacks_layout_box',
           text = 'File Explorer',
           text_align = 'center',
           separator = true,
@@ -25,7 +31,10 @@ return {
         -- This can be used to change how bufferline fetches the icon
         -- for an element e.g. a buffer or a tab.
         -- e.g.
-        local icon, hl = require('nvim-web-devicons').get_icon_by_filetype(element.filetype, { default = false })
+        local icon, hl = require('nvim-web-devicons').get_icon_by_filetype(
+          element.filetype,
+          { default = false }
+        )
         return icon, hl
         -- or
       end,
@@ -33,23 +42,22 @@ return {
   },
   keys = {
     -- Move to previous/next
-    { '<A-,>', '<Cmd>BufferLineCyclePrev<CR>',     desc = 'Next Tab' },
-    { '<A-.>', '<Cmd>BufferLineCycleNext<CR>',     desc = 'Prev Tab' },
+    { '<A-,>', '<Cmd>BufferLineCyclePrev<CR>', desc = 'Prev Tab' },
+    { '<A-.>', '<Cmd>BufferLineCycleNext<CR>', desc = 'Next Tab' },
     -- Re-order to previous/next
-    { '<A-<>', '<Cmd>BufferLineMovePrev<CR>',      desc = 'Move to prev Tab' },
-    { '<A->>', '<Cmd>BufferLineMoveNext<CR>',      desc = 'Move to next Tab' },
+    { '<A-<>', '<Cmd>BufferLineMovePrev<CR>', desc = 'Move to prev Tab' },
+    { '<A->>', '<Cmd>BufferLineMoveNext<CR>', desc = 'Move to next Tab' },
     -- Goto buffer in position...
-    { '<A-1>', '<Cmd>BufferLineGoToBuffer 1<CR>',  desc = 'GoTo Tab 1' },
-    { '<A-2>', '<Cmd>BufferLineGoToBuffer 2<CR>',  desc = 'GoTo Tab 2' },
-    { '<A-3>', '<Cmd>BufferLineGoToBuffer 3<CR>',  desc = 'GoTo Tab 3' },
-    { '<A-4>', '<Cmd>BufferLineGoToBuffer 4<CR>',  desc = 'GoTo Tab 4' },
-    { '<A-5>', '<Cmd>BufferLineGoToBuffer 5<CR>',  desc = 'GoTo Tab 5' },
-    { '<A-6>', '<Cmd>BufferLineGoToBuffer 6<CR>',  desc = 'GoTo Tab 6' },
-    { '<A-7>', '<Cmd>BufferLineGoToBuffer 7<CR>',  desc = 'GoTo Tab 7' },
-    { '<A-8>', '<Cmd>BufferLineGoToBuffer 8<CR>',  desc = 'GoTo Tab 8' },
-    { '<A-9>', '<Cmd>BufferLineGoToBuffer 9<CR>',  desc = 'GoTo Tab 9' },
-    { '<A-9>', '<Cmd>BufferLineGoToBuffer 10<CR>', desc = 'GoTo Tab 10' },
+    { '<A-1>', '<Cmd>BufferLineGoToBuffer 1<CR>', desc = 'GoTo Tab 1' },
+    { '<A-2>', '<Cmd>BufferLineGoToBuffer 2<CR>', desc = 'GoTo Tab 2' },
+    { '<A-3>', '<Cmd>BufferLineGoToBuffer 3<CR>', desc = 'GoTo Tab 3' },
+    { '<A-4>', '<Cmd>BufferLineGoToBuffer 4<CR>', desc = 'GoTo Tab 4' },
+    { '<A-5>', '<Cmd>BufferLineGoToBuffer 5<CR>', desc = 'GoTo Tab 5' },
+    { '<A-6>', '<Cmd>BufferLineGoToBuffer 6<CR>', desc = 'GoTo Tab 6' },
+    { '<A-7>', '<Cmd>BufferLineGoToBuffer 7<CR>', desc = 'GoTo Tab 7' },
+    { '<A-8>', '<Cmd>BufferLineGoToBuffer 8<CR>', desc = 'GoTo Tab 8' },
+    { '<A-9>', '<Cmd>BufferLineGoToBuffer 9<CR>', desc = 'GoTo Tab 9' },
     -- Pin/unpin buffer
-    { '<A-p>', '<Cmd>BufferLineTogglePin<CR>',     desc = '[P]in Tab' },
+    { '<A-p>', '<Cmd>BufferLineTogglePin<CR>', desc = '[P]in Tab' },
   },
 }

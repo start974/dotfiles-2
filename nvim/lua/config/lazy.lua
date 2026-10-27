@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
   vim.fn.system({
@@ -23,8 +23,7 @@ require('lazy').setup {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
     lazy = false,
-    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
-    -- have outdated releases, which may break your Neovim install.
+    -- Use the latest stable release for plugins that support semver (set `version = false` per plugin to track HEAD)
     version = '*', -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { 'monokai-nightasty' } },
@@ -40,7 +39,7 @@ require('lazy').setup {
         'gzip',
         -- "matchit",
         -- "matchparen",
-        -- "netrwPlugin",
+        'netrwPlugin', -- replaced by snacks explorer
         'tarPlugin',
         'tohtml',
         'tutor',

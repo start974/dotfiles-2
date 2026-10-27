@@ -9,9 +9,8 @@ return {
 
     lint.linters_by_ft = {
       c = { 'clangtidy' },
-      lua = { 'luacheck' },
       python = { 'pylint' },
-      shell = { 'shellcheck' },
+      sh = { 'shellcheck' },
       zsh = { 'zsh' },
     }
 

@@ -1,13 +1,12 @@
 return {
   'stevearc/conform.nvim',
   event = { 'BufReadPre', 'BufNewFile' },
-  lazy = true,
   cmd = 'ConformInfo',
   keys = {
     {
-      '<space>f',
+      '<localleader>f',
       function()
-        require('conform').format { async = true, lsp_fallback = true }
+        require('conform').format { async = true, lsp_format = 'fallback' }
       end,
       mode = { 'n' },
       desc = 'Format File',
@@ -24,12 +23,12 @@ return {
       json = { 'prettier' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
-      ocaml = { 'ocamlformat', 'ocp-indent' },
+      ocaml = { 'ocamlformat', 'ocp-indent', stop_after_first = true },
       python = { 'isort', 'black' },
       rust = { 'rustfmt', lsp_format = 'fallback' },
       yaml = { 'prettier' },
       tex = { 'tex-fmt' },
-      nix = {'nixfmt'},
+      nix = { 'nixfmt' },
     },
   },
 }

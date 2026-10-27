@@ -1,14 +1,10 @@
 local function get_visual_selection()
-  vim.cmd 'noau normal! "vy"'
-  local text = vim.fn.getreg 'v'
-  vim.fn.setreg('v', {})
-
-  text = string.gsub(text, '\n', ' ')
-  if #text > 0 then
-    return text
-  else
-    return ''
-  end
+  local lines = vim.fn.getregion(
+    vim.fn.getpos 'v',
+    vim.fn.getpos '.',
+    { type = vim.fn.mode() }
+  )
+  return table.concat(lines, ' ')
 end
 
 return {
@@ -22,8 +18,8 @@ return {
   {
     'tomtomjhj/vsrocq.nvim',
     ----dir = '~/Project/vscoq.nvim',
-    filetypes = 'coq',
-    dependecies = {
+    ft = 'coq',
+    dependencies = {
       'whonore/Coqtail',
     },
     cond = not vim.g.vscode,
@@ -42,7 +38,6 @@ return {
           },
         },
         lsp = {
-          trace = 'message',
           on_attach = function(client, bufnr)
             local vsrocq_client = vsrocq.clients[client.id]
             -- movement in normal mode
@@ -56,7 +51,10 @@ return {
 
             vim.keymap.set({ 'n' }, '<leader>cl', function()
               vsrocq_client:interpretToPoint()
-            end, { buffer = bufnr, desc = 'VsRocq interpret to point' })
+            end, {
+              buffer = bufnr,
+              desc = 'VsRocq interpret to point',
+            })
 
             vim.keymap.set({ 'n' }, '<leader>cG', function()
               vsrocq_client:interpretToEnd()

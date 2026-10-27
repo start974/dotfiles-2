@@ -1,22 +1,13 @@
 return {
   {
-    'github/copilot.vim',
+    'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
-    event = 'BufWinEnter',
-    init = function()
-      vim.g.copilot_no_maps = true
-    end,
-    config = function()
-      -- Block the normal Copilot suggestions
-      vim.api.nvim_create_augroup('github_copilot', { clear = true })
-      vim.api.nvim_create_autocmd({ 'FileType', 'BufUnload' }, {
-        group = 'github_copilot',
-        callback = function(args)
-          vim.fn['copilot#On' .. args.event]()
-        end,
-      })
-      vim.fn['copilot#OnFileType']()
-    end,
+    event = 'InsertEnter',
+    opts = {
+      -- Suggestions are shown by blink.cmp only
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
   },
   {
     'saghen/blink.cmp',
@@ -28,7 +19,9 @@ return {
         version = 'v2.*',
         build = 'make install_jsregexp',
         config = function()
-          require('luasnip.loaders.from_snipmate').lazy_load { paths = { '~/.config/nvim/snippets' } }
+          require('luasnip.loaders.from_snipmate').lazy_load {
+            paths = { vim.fn.stdpath 'config' .. '/snippets' },
+          }
         end,
       },
     },
@@ -87,8 +80,21 @@ return {
       -- Experimental signature help support
       signature = { enabled = true },
       sources = {
-        default = { 'lsp', 'latex', 'snippets', 'copilot', 'path', 'buffer' },
+        default = {
+          'lazydev',
+          'lsp',
+          'latex',
+          'snippets',
+          'copilot',
+          'path',
+          'buffer',
+        },
         providers = {
+          lazydev = {
+            name = 'LazyDev',
+            module = 'lazydev.integrations.blink',
+            score_offset = 100,
+          },
           copilot = {
             name = 'copilot',
             module = 'blink-copilot',

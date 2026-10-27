@@ -16,49 +16,40 @@ augroup('YankHighlight', { clear = true })
 autocmd('TextYankPost', {
   group = 'YankHighlight',
   callback = function()
-    vim.highlight.on_yank { higroup = 'IncSearch', timeout = '1000' }
+    vim.hl.on_yank { higroup = 'IncSearch', timeout = 1000 }
   end,
 })
 
 -- Remove whitespace on save
+augroup('TrimWhitespace', { clear = true })
 autocmd('BufWritePre', {
-  pattern = '',
-  callback = function(_args)
-    local ext = vim.fn.expand('%:e')
+  group = 'TrimWhitespace',
+  callback = function()
+    local ext = vim.fn.expand '%:e'
     if ext ~= 'trycmd' then
-      vim.cmd([[%s/\s\+$//e]])
+      local view = vim.fn.winsaveview()
+      vim.cmd [[keepjumps keeppatterns %s/\s\+$//e]]
+      vim.fn.winrestview(view)
     end
   end,
 })
 
 -- Don't auto commenting new lines
-autocmd('BufEnter', {
-  pattern = '',
-  command = 'set fo-=c fo-=r fo-=o',
+augroup('NoAutoComment', { clear = true })
+autocmd('FileType', {
+  group = 'NoAutoComment',
+  callback = function()
+    vim.opt_local.formatoptions:remove { 'c', 'r', 'o' }
+  end,
 })
 
 -- auto reload
 opt.autoread = true
+augroup('AutoReload', { clear = true })
 autocmd({ 'BufEnter', 'CursorHold', 'CursorHoldI', 'FocusGained' }, {
+  group = 'AutoReload',
   command = "if mode() != 'c' | checktime | endif",
   pattern = { '*' },
 })
 
--- Settings for filetypes:
---------------------------
-
--- Disable line length marker
-augroup('setLineLength', { clear = true })
-autocmd('Filetype', {
-  group = 'setLineLength',
-  pattern = { 'text', 'markdown', 'html', 'xhtml', 'javascript', 'typescript' },
-  command = 'setlocal cc=0',
-})
-
--- Set indentation to 2 spaces
-augroup('setIndent', { clear = true })
-autocmd('Filetype', {
-  group = 'setIndent',
-  pattern = { 'xml', 'html', 'xhtml', 'css', 'scss', 'javascript', 'typescript', 'yaml', 'lua' },
-  command = 'setlocal shiftwidth=2 tabstop=2',
-})
+-- Settings for filetypes are in after/ftplugin/

@@ -141,6 +141,7 @@ kanshi = "~/.config/kanshi/"
 #neovim (editor)
 [neovim.files]
 nvim = { target = "~/.config/nvim/", type = "symbolic" }
+"claude/statusline.sh" = "~/.claude/statusline.sh"
 
 #starship
 [starship.files]

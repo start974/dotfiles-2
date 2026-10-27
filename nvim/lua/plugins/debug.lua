@@ -20,17 +20,16 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
-    vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = '', linehl = '', numhl = '' })
+    vim.fn.sign_define(
+      'DapBreakpoint',
+      { text = '🛑', texthl = '', linehl = '', numhl = '' }
+    )
 
     -- Configure LLDB adapter
     dap.adapters.lldb = {
-      type = 'server',
-      port = '${port}',
-      executable = {
-        command = 'lldb',
-        args = { '--port', '${port}' },
-        detached = false,
-      },
+      type = 'executable',
+      command = 'lldb-dap',
+      name = 'lldb',
     }
 
     -- Default debug configuration for rust
@@ -40,7 +39,11 @@ return {
         type = 'lldb',
         request = 'launch',
         program = function()
-          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+          return vim.fn.input(
+            'Path to executable: ',
+            vim.fn.getcwd() .. '/',
+            'file'
+          )
         end,
         cwd = '${workspaceFolder}',
         stopOnEntry = false,
@@ -50,7 +53,7 @@ return {
 
   keys = {
     {
-      '<space>dc',
+      '<localleader>dc',
       function()
         require('dap').continue()
       end,
@@ -58,7 +61,7 @@ return {
       desc = 'Debug: Start/Continue',
     },
     {
-      '<space>di',
+      '<localleader>di',
       function()
         require('dap').step_into()
       end,
@@ -66,7 +69,7 @@ return {
       desc = 'Debug: Step Into',
     },
     {
-      '<space>n',
+      '<localleader>n',
       function()
         require('dap').step_over()
       end,
@@ -74,7 +77,7 @@ return {
       desc = 'Debug: Step Over',
     },
     {
-      '<space>o',
+      '<localleader>o',
       function()
         require('dap').step_out()
       end,

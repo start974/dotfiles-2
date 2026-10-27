@@ -1,11 +1,16 @@
 return {
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
   {
-    'TimUntersberger/neogit',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      "sindrets/diffview.nvim",
+    'tpope/vim-fugitive',
+    dependencies = { 'tpope/vim-rhubarb' },
+    cmd = {
+      'G',
+      'Git',
+      'Gdiffsplit',
+      'Gread',
+      'Gwrite',
+      'GBrowse',
+      'Gvdiffsplit',
+      'Gedit',
     },
   },
   {
@@ -14,12 +19,12 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
       signs = {
-        add = { text = '▎' },
-        change = { text = '▎' },
-        delete = { text = '' },
-        topdelete = { text = '' },
-        changedelete = { text = '▎' },
-        untracked = { text = '▎' },
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '≃' },
+        untracked = { text = '┆' },
       },
       on_attach = function(buffer)
         local gs = package.loaded.gitsigns
@@ -29,12 +34,11 @@ return {
         end
 
         -- stylua: ignore start
-        map("n", "]h", gs.next_hunk, "Next Hunk")
-        map("n", "[h", gs.prev_hunk, "Prev Hunk")
+        map("n", "]h", function() gs.nav_hunk("next") end, "Next Hunk")
+        map("n", "[h", function() gs.nav_hunk("prev") end, "Prev Hunk")
         map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
         map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
-        map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
         map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
         map("n", "<leader>ghp", gs.preview_hunk, "Preview Hunk")
         map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
