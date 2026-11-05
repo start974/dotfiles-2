@@ -71,6 +71,8 @@
   },
 
   "battery": {
+    "bat": "BAT0",
+    "adapter": "AC",
     "states": {
       "good": 95,
       "warning": 40,
