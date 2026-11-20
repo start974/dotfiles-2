@@ -1,18 +1,7 @@
 return {
   {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    opts = {
-      -- Suggestions are shown by blink.cmp only
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-    },
-  },
-  {
     'saghen/blink.cmp',
     dependencies = {
-      'fang2hou/blink-copilot',
       'erooke/blink-cmp-latex',
       {
         'L3MON4D3/LuaSnip',
@@ -85,7 +74,6 @@ return {
           'lsp',
           'latex',
           'snippets',
-          'copilot',
           'path',
           'buffer',
         },
@@ -94,12 +82,6 @@ return {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
             score_offset = 100,
-          },
-          copilot = {
-            name = 'copilot',
-            module = 'blink-copilot',
-            score_offset = 100,
-            async = true,
           },
           latex = {
             name = 'Latex',

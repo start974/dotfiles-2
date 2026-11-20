@@ -85,7 +85,6 @@ end
 
 return {
   'nvim-lualine/lualine.nvim',
-  dependencies = { 'AndreM222/copilot-lualine' },
   event = 'VeryLazy',
   opts = {
     options = {
@@ -139,7 +138,6 @@ return {
             return claude_connected() and 'DiagnosticOk' or 'Comment'
           end,
         },
-        'copilot',
         { lsp_clients, color = 'Comment' },
         { 'encoding', cond = unusual_encoding },
         { 'fileformat', cond = unusual_fileformat },
