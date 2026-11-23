@@ -9,6 +9,7 @@ packages = [
     "git",
     "kitty",
     "neovim",
+    "ssh",
     "starship",
     "sway",
     "swaylock",

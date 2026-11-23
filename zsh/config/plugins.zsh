@@ -21,7 +21,6 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     alias-finder
-    ssh-agent
     aliases
     z
     exercism

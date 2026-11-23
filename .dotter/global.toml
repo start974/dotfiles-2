@@ -148,6 +148,10 @@ kanshi = "~/.config/kanshi/"
 [neovim.files]
 nvim = { target = "~/.config/nvim/", type = "symbolic" }
 
+# ssh (key loaded in agent on first use)
+[ssh.files]
+"ssh/config" = { target = "~/.ssh/config", type = "symbolic" }
+
 #starship
 [starship.files]
 "starship.toml" = "~/.config/starship.toml"
