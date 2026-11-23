@@ -14,8 +14,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# completion enable
-autoload -U compinit; compinit
+# navigation and history
+setopt auto_cd auto_pushd pushd_ignore_dups
+setopt hist_ignore_dups hist_ignore_space share_history
 
 # auto start tmux
 #[[ -z "$TMUX" ]] && exec tmux
@@ -44,7 +45,7 @@ eval "$(direnv hook zsh)"
 
 {{#if (is_executable "zoxide")}}
 # zoxy ide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 {{/if}}
 
 {{#if (is_executable "mcfly")}}
@@ -64,7 +65,6 @@ source <(fzf --zsh)
 
 {{#if (is_executable "pack")}}
 #pack
-autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 eval "$(pack completion-script pack)"
 {{/if}}

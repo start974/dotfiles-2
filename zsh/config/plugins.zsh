@@ -16,14 +16,9 @@ plugins=(
     git
     gitignore
     nix-zsh-completions
-    nix-shell
     #python
     zsh-autosuggestions
     zsh-syntax-highlighting
-    alias-finder
-    aliases
-    z
-    exercism
 )
 
 source $ZSH/oh-my-zsh.sh

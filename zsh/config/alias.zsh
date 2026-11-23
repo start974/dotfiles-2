@@ -50,12 +50,6 @@ alias lt='lsd --tree'
 alias lr='lsd -tlR'
 {{/if}}
 
-{{#if (is_executable "zoxide")}}
-# go to files
-alias cd='z'
-alias cdi='zi'
-{{/if}}
-
 # make with all processor
 alias make='make -j`nproc`'
 
@@ -67,10 +61,6 @@ alias cp='cp -i'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias .5='cd ../../../..'
-alias .6='cd ../../../../..'
-alias .7='cd ../../../../../..'
-alias .8='cd ../../../../../../..'
 
 # mkdir
 alias mkcdtmp='cd $(mktemp -d)'
@@ -117,7 +107,7 @@ alias -g T='| tail'
 alias -g C='| wl-copy'
 
 alias -g NE='2> /dev/null'
-alias -g NUL='> /dev/null 2>&1'='| tail'
+alias -g NUL='> /dev/null 2>&1'
 
 # printing path
 alias pathln='echo $PATH | tr ":" "\n"'
